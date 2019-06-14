@@ -1,0 +1,1292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1bf48dfe-9ff1-43fe-b001-2fe5005d9042" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/../Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/StoryMapperApplication.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/boot/ProjectInitializer.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/client/BodyConverter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/client/DefaultHttpClientWrapper.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/client/HttpClientWrapper.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/config/WebSocketConfig.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/ActivityController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/ActorController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/AreaController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/ExceptionHandler.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/FrontendController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/ProjectController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/StoryController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/WebhookController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/domain/dto/ActivityDto.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/domain/dto/ActorDto.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/domain/dto/AreaDto.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/domain/dto/ErrorDto.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/domain/dto/IntegrationDto.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/domain/dto/ProjectDto.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/domain/dto/StoriesView.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/domain/dto/StoryDto.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/domain/page/PageRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/domain/page/PageResponse.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/domain/request/CreateActivityRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/domain/request/CreateActorRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/domain/request/CreateAreaRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/domain/request/CreateIntegrationRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/domain/request/CreateProjectRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/domain/request/CreateStoryRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/domain/request/UpdateActivityRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/domain/request/UpdateActorRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/domain/request/UpdateAreaRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/domain/request/UpdateProjectRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/controller/domain/request/UpdateStoryRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/entity/Activity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/entity/Actor.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/entity/ApiProviders.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/entity/Area.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/entity/BaseModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/entity/Dictionary.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/entity/Integration.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/entity/Project.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/entity/RemindToken.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/entity/Story.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/entity/StoryState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/entity/User.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/exception/ApiException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/exception/NotFoundException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/mapper/IntegrationAsyncSynchronizer.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/mapper/StoryMapper.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/mapper/StoryMapperFactory.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/mapper/UserDetailsExtractor.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/mapper/UserDetailsExtractorProvider.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/mapper/domain/ExternalUserDetails.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/mapper/pivotal/PivotalState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/mapper/pivotal/PivotalStoryMapper.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/repository/Repositories.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/service/DefaultActivityService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/service/DefaultActorService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/service/DefaultAreaService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/service/DefaultProjectService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/service/DefaultStoriesViewService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/service/DefaultStoryService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/service/Services.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/tracker/pivotal/DefaultPivotalApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/tracker/pivotal/PivotalApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/tracker/pivotal/PivotalUserDetailsExtractor.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/tracker/pivotal/activity/ActivityHandler.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/tracker/pivotal/activity/DefaultPivotalActivityManager.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/tracker/pivotal/activity/PivotalActivityManager.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/tracker/pivotal/domain/PivotalEpic.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/tracker/pivotal/domain/PivotalLabel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/tracker/pivotal/domain/PivotalStory.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/tracker/pivotal/domain/PivotalUser.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/tracker/pivotal/domain/StoryCount.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/tracker/pivotal/domain/StoryCounts.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/tracker/pivotal/domain/activity/ChangesBody.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/tracker/pivotal/domain/activity/PivotalProject.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/tracker/pivotal/domain/activity/PrimaryResources.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/tracker/pivotal/domain/activity/WebhookActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/tracker/pivotal/domain/activity/request/EpicRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/tracker/pivotal/domain/activity/request/LabelRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/tracker/pivotal/domain/activity/request/StoryRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/kotlin/co/zenio/storymapper/tracker/pivotal/domain/webhook/Webhook.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/application-staging.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/db/migration/V1_0__initial_structure.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/db/migration/V1_1__test_project.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/kotlin/co/zenio/storymapper/client/BodyConverterTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/kotlin/co/zenio/storymapper/client/DefaultHttpClientTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/kotlin/co/zenio/storymapper/controller/ActivityControllerTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/kotlin/co/zenio/storymapper/controller/ActorControllerTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/kotlin/co/zenio/storymapper/controller/AreaControllerTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/kotlin/co/zenio/storymapper/controller/ExceptionHandlerTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/kotlin/co/zenio/storymapper/controller/ProjectControllerTests.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/kotlin/co/zenio/storymapper/controller/StoryControllerTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/kotlin/co/zenio/storymapper/controller/WebhookControllerTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/kotlin/co/zenio/storymapper/controller/domain/PageableTests.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/kotlin/co/zenio/storymapper/mapper/StoryMapperFactoryTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/kotlin/co/zenio/storymapper/mapper/pivotal/PivotalStoryMapperTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/kotlin/co/zenio/storymapper/service/DefaultActivityServiceTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/kotlin/co/zenio/storymapper/service/DefaultActorServiceTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/kotlin/co/zenio/storymapper/service/DefaultAreaServiceTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/kotlin/co/zenio/storymapper/service/DefaultProjectServiceTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/kotlin/co/zenio/storymapper/service/DefaultStoriesViewServiceTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/kotlin/co/zenio/storymapper/service/DefaultStoryServiceTests.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/kotlin/co/zenio/storymapper/tracker/pivotal/DefaultPivotalApiTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/kotlin/co/zenio/storymapper/tracker/pivotal/activity/ActivityHandlerTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/kotlin/co/zenio/storymapper/tracker/pivotal/activity/DefaultPivotalActivityManagerTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/kotlin/co/zenio/storymapper/util/DummyData.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/kotlin/co/zenio/storymapper/util/MockitoUtil.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/client/apiException.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/client/pivotalLabelSerialized.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/controller/activityDto.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/controller/actorDto.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/controller/areaDto.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/controller/createActivityRequest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/controller/createActorRequest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/controller/createAreaRequest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/controller/getWebhook.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/controller/handleActivity.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/controller/saveStoryRequest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/controller/savedStory.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/controller/storiesView.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/controller/storyChanges.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/controller/storyDto.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/controller/updateActivityRequest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/controller/updateActorRequest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/controller/updateAreaRequest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/controller/updatedStory.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/service/deleteStoryActivity.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/service/saveStoryActivity.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/service/storyChanges.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/service/updateStoryActivity.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/tracker/pivotal/activity/saveEpicChanges.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/tracker/pivotal/activity/saveStoryChanges.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/tracker/pivotal/activity/saveStoryChangesWithActivity.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/tracker/pivotal/activity/updateEpicChanges.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/tracker/pivotal/activity/updateStoryChanges.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/tracker/pivotal/createWebhook.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/tracker/pivotal/pivotalEpic.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/tracker/pivotal/pivotalEpics.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/tracker/pivotal/pivotalLabel.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/tracker/pivotal/pivotalSavedStory.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/tracker/pivotal/pivotalStories.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/tracker/pivotal/pivotalStory.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/tracker/pivotal/pivotalStoryNoEpic.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/test/resources/co/zenio/storymapper/tracker/pivotal/pivotalUpdatedStory.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/jest.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/common/HOC/with-dependencies.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/common/annotations/dependency-injection.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/common/annotations/model.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/common/changeset-validations.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/common/changeset.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/common/dependency-container.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/common/dependency-registration.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/common/mappers/base/base.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/common/pageable.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/common/scenes/scenes.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/common/services/base/base.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/common/sortable.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/common/storages/base/default.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/common/storages/base/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/common/translate.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/common/types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/common/types/jwt-client/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/common/utils/common.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/configs/ability-context.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/configs/ability.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/configs/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/dicts/paths.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/fetchers/impl/default.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/fetchers/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/button/index.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/button/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/changer-card/changer-actions/index.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/changer-card/changer-actions/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/changer-card/changer-activitity/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/changer-card/changer-area/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/changer-card/changer-card/index.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/changer-card/changer-card/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/changer-card/changer-description/index.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/changer-card/changer-description/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/changer-card/changer-popup/index.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/changer-card/changer-popup/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/changer-card/changer-story/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/changer-card/hierarchy-activity/index.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/changer-card/hierarchy-activity/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/changer-card/hierarchy-area/index.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/changer-card/hierarchy-area/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/changer-card/hierarchy-story/index.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/changer-card/hierarchy-story/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/clear-class/index.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/clear-class/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/clear-const/index.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/clear-const/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/fields/input/index.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/fields/input/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/preloader/index.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/preloader/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/project-tab/index.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/project-tab/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/projects-popup/index.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/projects-popup/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/story-mapper-card/index.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/story-mapper-card/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/vertical-menu/index.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/kit/components/vertical-menu/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/layers.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/locales/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/locales/dev/translation.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/mappers/account/default.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/mappers/activity/default.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/mappers/area/default.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/mappers/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/mappers/popup/default.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/mappers/preloader/default.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/mappers/project/default.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/mappers/story/default.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/misc/permissions.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/models/account.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/models/activity.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/models/area.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/models/current-project.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/models/popup-cards.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/models/project.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/models/story.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/registerServiceWorker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/scenes.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/scenes/BaseScene/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/scenes/MapperScene/index.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/scenes/MapperScene/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/scenes/NotFoundScene/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/scenes/ProjectsScene/index.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/scenes/ProjectsScene/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/services/activity/default.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/services/area/default.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/services/auth/default.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/services/config/default.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/services/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/services/popup/default.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/services/preloader/default.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/services/project/default.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/services/scene-registry/default.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/services/story/default.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/shared/images/icons/alert-circle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/shared/images/icons/check-green.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/shared/images/icons/close.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/shared/images/icons/map.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/shared/images/icons/pivotal-tracker.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/shared/images/icons/plus.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/shared/images/icons/popover.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/shared/images/icons/projects.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/shared/images/project-avatar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/shared/styles/global.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/shared/styles/toolbox/colors.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/shared/styles/toolbox/shadows.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/shared/styles/toolbox/transitions.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/shared/styles/toolbox/width.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/shared/styles/typography/typography.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/storages/account/default.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/storages/activity/default.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/storages/area/default.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/storages/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/storages/popup/default.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/storages/preloader/default.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/storages/project/default.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/storages/story/default.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/webpack.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/webpack.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../settings.gradle" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/.gradle/" />
+    <ignored path="$PROJECT_DIR$/build/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="mem:testdb" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="mem:testdb" type="feb32156:DbDataSourceImpl" />
+        <item name="TESTDB: database" type="c8e2528e:H2ImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="mem:testdb" type="feb32156:DbDataSourceImpl" />
+        <item name="TESTDB: database" type="c8e2528e:H2ImplModel$Database" />
+        <item name="PUBLIC: schema" type="4f7ca4f5:H2ImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="mem:testdb" type="feb32156:DbDataSourceImpl" />
+        <item name="TESTDB: database" type="c8e2528e:H2ImplModel$Database" />
+        <item name="PUBLIC: schema" type="4f7ca4f5:H2ImplModel$Schema" />
+        <item name="WALLETS: table" type="e4ce7bd9:H2ImplModel$Table" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="tool" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/service/Service.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/ToolApplication.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/service/TokenSnapshot.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="126" column="22" lean-forward="true" selection-start-line="126" selection-start-column="22" selection-end-line="126" selection-end-column="22" />
+              <folding>
+                <element signature="e#34#904#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/snapshot_at_block_7955310.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="365">
+              <caret line="115" selection-start-line="115" selection-end-line="115" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/service/DefaultSnapshotService.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="497">
+              <caret line="57" column="52" selection-start-line="57" selection-start-column="52" selection-end-line="57" selection-end-column="52" />
+              <folding>
+                <element signature="e#34#349#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/component/Web3jWrapper.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="381">
+              <caret line="52" column="40" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
+              <folding>
+                <element signature="e#36#855#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/model/Snapshot.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/service/DefaultCommandLine.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="319">
+              <caret line="38" column="42" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Kotlin Interface" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>0x8a7e7217f833074ed76977b4e7296d9742506c26</find>
+      <find>0x580286a7891d4ed53c8dddf9fab787c3fd7499c7</find>
+      <find>0xedbe3ef8314b90bb1e5997683809f728910c2acc</find>
+      <find>0xd68c2edcf33f16c7c763a33deda2c8f26f6249e5</find>
+      <find>0x8aad95073d00bfc5135b6cffb5c4b15bbaaf6568</find>
+      <find>0x5c9ef11f2da1b3a52c5f9a6cd7e6f3b60557d757</find>
+      <find>0x9d3f5c25a53f80c35f39ab42e79be20966b59a2e</find>
+      <find>0xea5f89bc69093ee536e6ce764876e04b3e4927b9</find>
+      <find>0xb1098c8a132a289b21104c894e90e147242dee260xfd1c33ec3e8d78cba821c7409ea297417be5468a</find>
+      <find>0x6058da76c810382d74705c7b65a47250c18d63bd</find>
+      <find>0xfd1c33ec3e8d78cba821c7409ea297417be5468a</find>
+      <find>web3j</find>
+      <find>0x1D3Ad91A2D7353D11cC981660225e3bB2F3542Fa</find>
+      <find>0xb907e27fa688b48a8cdb3a56249b04ad17c0c4db</find>
+      <find>0xb99844762d8d307c9e7909cdcc16c0551eea75b5</find>
+      <find>fromBlock</find>
+      <find>writer</find>
+      <find>0x6b957db2a1911b2fdf4c86932f92ff65f3d61bc1</find>
+      <find>Process</find>
+      <find>0xae1a1cdb13ec86506831531d9e52456b2c0eb625</find>
+      <find>0x829e101f7ef236866d27445a34c880842108c342</find>
+      <find>0xfa2dcb0b9b59cc9d7eb0d991097c6656d853f047</find>
+      <find>0x84324f2b39390cde4087e764eb8a9b63c200be2c</find>
+      <find>BALANCE_METHOD</find>
+      <find>RuntimeException</find>
+      <find>distribution</find>
+      <find>sl</find>
+      <find>en-mnemonic-word-list.txt</find>
+      <find>Wallet</find>
+      <find>0x5d9fbd9020B1aC8dfF49fB0561dfA4C500d24019</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/service/Snapshot.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/service/Ggg.java" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/service/TokenHolders.kt" />
+        <option value="$PROJECT_DIR$/src/main/resources/test_open_addresses.csv" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/service/Balances.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/repository/WalletRepository.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/model/Token.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/service/CommandLine.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/model/Snapshot.kt" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/bbb47a59-31ab-449a-90e2-35f05b1df848/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/service/CompareResults.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/service/Distributor.kt" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/model/ChildWallet.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/config/property/DistributionProperties.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/model/Wallet.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/service/Service.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/component/Web3jWrapper.kt" />
+        <option value="$PROJECT_DIR$/_gitignore" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/service/DefaultSnapshotService.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/service/DefaultCommandLine.kt" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/ToolApplication.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/service/TokenSnapshot.kt" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1920" />
+    <option name="y" value="-2" />
+    <option name="width" value="1920" />
+    <option name="height" value="1082" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id>Android &gt; Lint &gt; Security</id>
+          </State>
+          <State>
+            <id>Android Lint for Kotlin</id>
+          </State>
+        </expanded-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="tool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="snapshot-tool-kotlin" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Course" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="H2" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="go.gopath.indexing.explicitly.defined" value="true" />
+    <property name="last.edited.regexp" value="0x4ea594480aaa01df66a51e178503f50b7eb14e6c" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/build.gradle" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="io.snapshot.tool.model" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Kotlin.OPENC">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Balances" type="JetRunConfigurationType" factoryName="Kotlin">
+      <module name="tool_main" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="--address=0x9d86b1b2554ec410eccffbf111a6994910111340 --from=7260850 --to=7277737" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="io.snapshot.tool.ToolApplicationKt" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Holders" type="JetRunConfigurationType" factoryName="Kotlin">
+      <module name="tool_main" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="--address=0x9d86b1b2554ec410eccffbf111a6994910111340 --from=7277734 --to=7277737" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="io.snapshot.tool.ToolApplicationKt" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OPENC" type="JetRunConfigurationType" factoryName="Kotlin">
+      <module name="tool_main" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="--address=0x9d86b1b2554ec410eccffbf111a6994910111340 --decimals=8 --from=7873338 --to=7955310 --server=https://mainnet.infura.io/5VkzsA31kYsWyrqC9GCT" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="io.snapshot.tool.ToolApplicationKt" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="io.snapshot.tool.ToolApplicationKt" type="JetRunConfigurationType" factoryName="Kotlin" nameIsGenerated="true">
+      <module name="tool_main" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="--address=0x69c4BB240cF05D51eeab6985Bab35527d04a8C64 --from=6700216 --to=6701188" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="io.snapshot.tool.ToolApplicationKt" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ToolApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="tool_main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="io.snapshot.tool.ToolApplication" />
+      <option name="PROGRAM_PARAMETERS" value="Hello" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Kotlin.io.snapshot.tool.ToolApplicationKt" />
+      <item itemvalue="Kotlin.OPENC" />
+      <item itemvalue="Kotlin.Holders" />
+      <item itemvalue="Kotlin.Balances" />
+      <item itemvalue="Spring Boot.ToolApplication" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1bf48dfe-9ff1-43fe-b001-2fe5005d9042" name="Default" comment="" />
+      <created>1549461676381</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1549461676381</updated>
+      <workItem from="1549461679919" duration="8220000" />
+      <workItem from="1549613931834" duration="54943000" />
+      <workItem from="1550040211827" duration="55000" />
+      <workItem from="1550040288690" duration="11381000" />
+      <workItem from="1550222516153" duration="1865000" />
+      <workItem from="1551187241560" duration="82911000" />
+      <workItem from="1551703863367" duration="63104000" />
+      <workItem from="1552555650381" duration="14000" />
+      <workItem from="1552638622290" duration="637000" />
+      <workItem from="1552925555768" duration="598000" />
+      <workItem from="1553768598494" duration="865000" />
+      <workItem from="1554882630349" duration="9347000" />
+      <workItem from="1560499787545" duration="6528000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="240468000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1920" y="-2" width="1920" height="1082" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24546425" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="UI Designer" order="6" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32972974" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.26185346" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.43534482" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
+      <window_info anchor="bottom" id="Build" order="8" weight="0.32972974" />
+      <window_info anchor="bottom" id="Spring" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3286638" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32972974" />
+      <window_info anchor="bottom" id="Run with VisualVM" order="13" />
+      <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="15" />
+      <window_info anchor="bottom" id="Debug with VisualVM" order="16" />
+      <window_info anchor="bottom" id="Educational.CheckDetails" order="17" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Console" order="18" weight="0.32972974" />
+      <window_info anchor="bottom" id="Docker" order="19" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Java Enterprise" order="20" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Cargo" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" />
+      <window_info anchor="right" id="Mongo Explorer" order="6" />
+      <window_info anchor="right" id="Database" order="7" weight="0.32967034" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Capture Analysis" order="9" />
+      <window_info anchor="right" id="Gradle" order="10" weight="0.32967034" />
+      <window_info anchor="right" id="SciView" order="11" />
+      <window_info anchor="right" id="Theme Preview" order="12" />
+      <window_info anchor="right" id="Bean Validation" order="13" weight="0.32967034" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.1.4.RELEASE/1c97085f1052ad3206bafd364eba572d9f7565c2/spring-web-5.1.4.RELEASE-sources.jar!/org/springframework/web/client/RestTemplate.java</url>
+          <line>689</line>
+          <properties />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.1.4.RELEASE/1c97085f1052ad3206bafd364eba572d9f7565c2/spring-web-5.1.4.RELEASE-sources.jar!/org/springframework/web/util/DefaultUriBuilderFactory.java</url>
+          <line>369</line>
+          <properties />
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/src.zip!/java/math/BigInteger.java</url>
+          <line>419</line>
+          <properties />
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.web3j/crypto/3.3.1/6d0063a5a0b9c7e6f04081eff9203d44d950dd0a/crypto-3.3.1-sources.jar!/org/web3j/crypto/MnemonicUtils.java</url>
+          <line>165</line>
+          <properties />
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bitcoinj/bitcoinj-core/0.14.7/ab6570ca374f7b8bbafb3e7cb5e2169c0c01c96e/bitcoinj-core-0.14.7-sources.jar!/org/bitcoinj/wallet/DeterministicKeyChain.java</url>
+          <line>240</line>
+          <properties />
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bitcoinj/bitcoinj-core/0.14.7/ab6570ca374f7b8bbafb3e7cb5e2169c0c01c96e/bitcoinj-core-0.14.7-sources.jar!/org/bitcoinj/wallet/DeterministicKeyChain.java</url>
+          <line>357</line>
+          <properties />
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bitcoinj/bitcoinj-core/0.14.7/ab6570ca374f7b8bbafb3e7cb5e2169c0c01c96e/bitcoinj-core-0.14.7-sources.jar!/org/bitcoinj/wallet/DeterministicKeyChain.java</url>
+          <line>257</line>
+          <properties />
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bitcoinj/bitcoinj-core/0.14.7/ab6570ca374f7b8bbafb3e7cb5e2169c0c01c96e/bitcoinj-core-0.14.7-sources.jar!/org/bitcoinj/crypto/HDKeyDerivation.java</url>
+          <line>84</line>
+          <properties />
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bitcoinj/bitcoinj-core/0.14.7/ab6570ca374f7b8bbafb3e7cb5e2169c0c01c96e/bitcoinj-core-0.14.7-sources.jar!/org/bitcoinj/crypto/DeterministicKey.java</url>
+          <line>90</line>
+          <properties />
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bitcoinj/bitcoinj-core/0.14.7/ab6570ca374f7b8bbafb3e7cb5e2169c0c01c96e/bitcoinj-core-0.14.7-sources.jar!/org/bitcoinj/wallet/DeterministicKeyChain.java</url>
+          <line>251</line>
+          <properties />
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bitcoinj/bitcoinj-core/0.14.7/ab6570ca374f7b8bbafb3e7cb5e2169c0c01c96e/bitcoinj-core-0.14.7-sources.jar!/org/bitcoinj/crypto/HDKeyDerivation.java</url>
+          <line>77</line>
+          <properties />
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bitcoinj/bitcoinj-core/0.14.7/ab6570ca374f7b8bbafb3e7cb5e2169c0c01c96e/bitcoinj-core-0.14.7-sources.jar!/org/bitcoinj/wallet/DeterministicKeyChain.java</url>
+          <line>360</line>
+          <properties />
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bitcoinj/bitcoinj-core/0.14.7/ab6570ca374f7b8bbafb3e7cb5e2169c0c01c96e/bitcoinj-core-0.14.7-sources.jar!/org/bitcoinj/wallet/DeterministicKeyChain.java</url>
+          <line>361</line>
+          <properties />
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bitcoinj/bitcoinj-core/0.14.7/ab6570ca374f7b8bbafb3e7cb5e2169c0c01c96e/bitcoinj-core-0.14.7-sources.jar!/org/bitcoinj/crypto/HDKeyDerivation.java</url>
+          <line>87</line>
+          <properties />
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bitcoinj/bitcoinj-core/0.14.7/ab6570ca374f7b8bbafb3e7cb5e2169c0c01c96e/bitcoinj-core-0.14.7-sources.jar!/org/bitcoinj/crypto/HDKeyDerivation.java</url>
+          <line>225</line>
+          <properties />
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.madgag/sc-light-jdk15on/1.47.0.2/ced0cb6f9a63e6573b35ab34ac98589655b611dc/sc-light-jdk15on-1.47.0.2-sources.jar!/org/spongycastle/crypto/params/ECDomainParameters.java</url>
+          <line>68</line>
+          <properties />
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/component/Web3jWrapper.kt</url>
+          <line>53</line>
+          <properties />
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/service/TokenSnapshot.kt</url>
+          <line>128</line>
+          <properties />
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>web3j.ethGetLogs(createTransferFilter(tokenAddress, 7935618, 7955310)).send()</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>web3j.ethGetLogs(createTransferFilter(tokenAddress, fromBlock, toBlock)).send()</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>getNonce(from)</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>getNonce(from),</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Credentials.create(key.privateKeyAsHex)</expression-string>
+        <language-id>kotlin</language-id>
+        <custom-info>import org.web3j.crypto.ECKeyPair,import org.web3j.crypto.Keys,import org.web3j.crypto.Hash</custom-info>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Keys.getAddress(key.publicKeyAsHex)</expression-string>
+        <language-id>kotlin</language-id>
+        <custom-info>import org.web3j.crypto.ECKeyPair,import org.web3j.crypto.Keys,import org.web3j.crypto.Hash</custom-info>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>//    key.publicKeyAsHex
+    val hash = Hash.sha3(key.publicKeyAsHex)
+    hash.substring(hash.length - 40)</expression-string>
+        <language-id>kotlin</language-id>
+        <custom-info>import org.web3j.crypto.ECKeyPair,import org.web3j.crypto.Keys,import org.web3j.crypto.Hash</custom-info>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>//    key.publicKeyAsHex
+    val hash = Hash.sha3(key.publicKeyAsHex)
+    hash.substring(hash.length - 160 &gt;&gt; 2)</expression-string>
+        <language-id>kotlin</language-id>
+        <custom-info>import org.web3j.crypto.ECKeyPair,import org.web3j.crypto.Keys,import org.web3j.crypto.Hash</custom-info>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>//    key.publicKeyAsHex
+    val hash = Hash.sha3(key.publicKeyAsHex)
+    hash.substring(hash.length - 20)</expression-string>
+        <language-id>kotlin</language-id>
+        <custom-info>import org.web3j.crypto.ECKeyPair,import org.web3j.crypto.Keys,import org.web3j.crypto.Hash</custom-info>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+    </expressions>
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>//FunctionReturnDecoder.decode((ethGetLogs.first().get() as EthLog.LogObject).data, Utils.convert(listOf(
+//        object: TypeReference&lt;Address&gt;() {}, object: TypeReference&lt;Address&gt;() {}, object: TypeReference&lt;Uint256&gt;() {}
+//)))
+
+    ethGetLogs.first().get()</expression-string>
+        <language-id>kotlin</language-id>
+        <custom-info>import org.web3j.abi.FunctionReturnDecoder,import org.web3j.protocol.core.methods.response.EthLog,import org.web3j.abi.Utils,import org.web3j.abi.TypeReference,import org.web3j.abi.datatypes.generated.Uint256,import javax.xml.ws.wsaddressing.W3CEndpointReference,import org.web3j.abi.datatypes.Address</custom-info>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bitcoinj/bitcoinj-core/0.15/a5a69b38761ce8af4c895f1a6c719d4daff8f782/bitcoinj-core-0.15-sources.jar!/org/bitcoinj/crypto/HDKeyDerivation.java" />
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/src.zip!/java/security/SecureRandom.java" />
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/src.zip!/java/security/SecureRandomSpi.java" />
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/src.zip!/sun/security/provider/SecureRandom.java" />
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/src.zip!/sun/security/provider/SeedGenerator.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google/bitcoinj/0.11.3/9086057dbb9bf7273a284a71d0209ffce3ec43ef/bitcoinj-0.11.3-sources.jar!/com/google/bitcoin/jni/NativeWalletEventListener.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bitcoinj/bitcoinj-core/0.15/a5a69b38761ce8af4c895f1a6c719d4daff8f782/bitcoinj-core-0.15-sources.jar!/org/bitcoinj/crypto/HDUtils.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bitcoinj/bitcoinj-core/0.15/a5a69b38761ce8af4c895f1a6c719d4daff8f782/bitcoinj-core-0.15-sources.jar!/org/bitcoinj/wallet/DeterministicKeyChain.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google/bitcoinj/0.11.3/9086057dbb9bf7273a284a71d0209ffce3ec43ef/bitcoinj-0.11.3-sources.jar!/com/google/bitcoin/core/Wallet.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.web3j/crypto/4.1.1/469055b15fb30e06e7195001d353ef898c0f8b77/crypto-4.1.1-sources.jar!/org/web3j/crypto/Bip39Wallet.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.web3j/crypto/4.1.1/469055b15fb30e06e7195001d353ef898c0f8b77/crypto-4.1.1-sources.jar!/org/web3j/crypto/Bip32ECKeyPair.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.web3j/crypto/4.1.1/469055b15fb30e06e7195001d353ef898c0f8b77/crypto-4.1.1-sources.jar!/org/web3j/crypto/CipherException.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.web3j/crypto/4.1.1/469055b15fb30e06e7195001d353ef898c0f8b77/crypto-4.1.1-sources.jar!/org/web3j/crypto/Credentials.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.web3j/crypto/4.1.1/469055b15fb30e06e7195001d353ef898c0f8b77/crypto-4.1.1-sources.jar!/org/web3j/crypto/ECKeyPair.java" />
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/src.zip!/java/security/PrivateKey.java" />
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/src.zip!/java/security/KeyPair.java" />
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/src.zip!/java/security/PublicKey.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.web3j/crypto/4.1.1/469055b15fb30e06e7195001d353ef898c0f8b77/crypto-4.1.1-sources.jar!/org/web3j/crypto/MnemonicUtils.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.web3j/crypto/4.1.1/469055b15fb30e06e7195001d353ef898c0f8b77/crypto-4.1.1-sources.jar!/org/web3j/crypto/Keys.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.web3j/abi/3.3.1/f564be85c2250c8db0524774f53d51fd5c641bf8/abi-3.3.1-sources.jar!/org/web3j/abi/datatypes/Address.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.2.61/5146b44c50f5e853d6d77150089b6281d72fe736/kotlin-stdlib-1.2.61-sources.jar!/kotlin/Primitives.kt" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.2.61/bb8aafdddb6c895ba1a9646eddabdb844eb544fb/kotlin-stdlib-common-1.2.61-sources.jar!/generated/_Ranges.kt" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bitcoinj/bitcoinj-core/0.15/a5a69b38761ce8af4c895f1a6c719d4daff8f782/bitcoinj-core-0.15-sources.jar!/org/bitcoinj/wallet/DeterministicSeed.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.ajalt/clikt/1.6.0/deb510ce3463d56e520decb2fdf10ba6bd58d29b/clikt-1.6.0-sources.jar!/com/github/ajalt/clikt/core/CliktCommand.kt" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.ajalt/clikt/1.6.0/deb510ce3463d56e520decb2fdf10ba6bd58d29b/clikt-1.6.0-sources.jar!/com/github/ajalt/clikt/parameters/options/OptionWithValues.kt" />
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/service/CompareResults.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="757">
+          <caret line="63" column="32" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#154#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/snapshot.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snapshot_at_block_7307777.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/service/TokenHolders.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-72">
+          <folding>
+            <element signature="e#34#295#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/service/Distributor.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snapshot_at_block_7277737_copy.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="83" lean-forward="true" selection-start-line="7" selection-start-column="83" selection-end-line="7" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/config/property/DistributionProperties.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="e#42#259#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hibernate.javax.persistence/hibernate-jpa-2.1-api/1.0.2.Final/604e1101cb261c61200bfd655dfc1aa5aeca36d6/hibernate-jpa-2.1-api-1.0.2.Final-sources.jar!/javax/persistence/Table.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="43" column="11" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/service/Balances.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1547">
+          <caret line="109" column="16" selection-start-line="109" selection-start-column="16" selection-end-line="109" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/difference.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/open_addresses.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addresses">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/model/ChildWallet.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="61" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/model/Wallet.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/repository/WalletRepository.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/service/Service.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/ToolApplication.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/model/Snapshot.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/service/DefaultSnapshotService.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="57" column="52" selection-start-line="57" selection-start-column="52" selection-end-line="57" selection-end-column="52" />
+          <folding>
+            <element signature="e#34#349#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/component/Web3jWrapper.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="52" column="40" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
+          <folding>
+            <element signature="e#36#855#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/service/DefaultCommandLine.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="38" column="42" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snapshot_at_block_7955310.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="115" selection-start-line="115" selection-end-line="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/io/snapshot/tool/service/TokenSnapshot.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="126" column="22" lean-forward="true" selection-start-line="126" selection-start-column="22" selection-end-line="126" selection-end-column="22" />
+          <folding>
+            <element signature="e#34#904#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Kotlin</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>tool</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Gradle: ch.qos.logback:logback-classic:1.2.3</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

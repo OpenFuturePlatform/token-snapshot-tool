@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.web3j:web3j-spring-boot-starter:1.6.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.web3j/web3j-spring-boot-starter/1.6.0/30776e38b7acb6f8c0692919580ecb0e63135ccf/web3j-spring-boot-starter-1.6.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.web3j/web3j-spring-boot-starter/1.6.0/363ecec78bb25d23595f98dbfadf115e543d81fb/web3j-spring-boot-starter-1.6.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

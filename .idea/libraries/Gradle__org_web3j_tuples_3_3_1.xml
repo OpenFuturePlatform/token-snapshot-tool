@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.web3j:tuples:3.3.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.web3j/tuples/3.3.1/7c225af6eb23669240de00fdb10bcb2114b39caa/tuples-3.3.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.web3j/tuples/3.3.1/fa0caafe346c27637e6bfac563ea5b9f4349b36c/tuples-3.3.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
