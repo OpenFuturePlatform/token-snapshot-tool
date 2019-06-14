@@ -1,7 +1,7 @@
-package io.snapshot.tool.service
+package io.openfuture.snapshot.service
 
-import io.snapshot.tool.component.Web3jWrapper
-import io.snapshot.tool.model.Snapshot
+import io.openfuture.snapshot.component.Web3jWrapper
+import io.openfuture.snapshot.model.Snapshot
 import org.springframework.stereotype.Service
 import org.web3j.abi.datatypes.Address
 import java.io.PrintWriter

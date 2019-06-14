@@ -1,4 +1,4 @@
-package io.snapshot.tool.component
+package io.openfuture.snapshot.component
 
 import org.springframework.stereotype.Component
 import org.web3j.abi.EventEncoder

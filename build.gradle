@@ -10,7 +10,7 @@ plugins {
 
 apply plugin: "io.spring.dependency-management"
 
-group = "io.snapshot.tool"
+group = "io.snapshot.snapshot"
 version = "1.0.0"
 sourceCompatibility = JavaVersion.VERSION_1_8
 

@@ -1,11 +1,11 @@
-package io.snapshot.tool.service
+package io.openfuture.snapshot.service
 
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.parameters.options.default
 import com.github.ajalt.clikt.parameters.options.defaultLazy
 import com.github.ajalt.clikt.parameters.options.option
 import com.github.ajalt.clikt.parameters.types.int
-import io.snapshot.tool.component.Web3jWrapper
+import io.openfuture.snapshot.component.Web3jWrapper
 import org.springframework.stereotype.Component
 
 /**

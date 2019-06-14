@@ -1,6 +1,6 @@
-package io.snapshot.tool.service
+package io.openfuture.snapshot.service
 
-import io.snapshot.tool.model.Snapshot
+import io.openfuture.snapshot.model.Snapshot
 
 /**
  * @author Igor Pahomov

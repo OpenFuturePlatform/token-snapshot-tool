@@ -1,6 +1,6 @@
-package io.snapshot.tool
+package io.openfuture.snapshot
 
-import io.snapshot.tool.service.CommandLine
+import io.openfuture.snapshot.service.CommandLine
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

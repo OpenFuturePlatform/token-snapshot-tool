@@ -1,4 +1,4 @@
-package io.snapshot.tool.model
+package io.openfuture.snapshot.model
 
 /**
  * @author Igor Pahomov

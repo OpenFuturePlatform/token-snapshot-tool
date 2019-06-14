@@ -1,12 +1,11 @@
-.gradle
-/build/
-!gradle/wrapper/gradle-wrapper.jar
-
-### IntelliJ IDEA ###
-.idea
-*.iws
+.idea/
+build/
+out/
+.gradle/
 *.iml
-*.ipr
-/out/
+*.db
+*.txt
+*.log
+bin/
 
 *.csv

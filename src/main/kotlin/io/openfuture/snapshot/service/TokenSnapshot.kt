@@ -1,4 +1,4 @@
-package io.snapshot.tool.service
+package io.openfuture.snapshot.service
 
 import org.web3j.abi.EventEncoder
 import org.web3j.abi.FunctionEncoder
