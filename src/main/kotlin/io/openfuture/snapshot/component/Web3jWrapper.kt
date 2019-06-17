@@ -13,6 +13,7 @@ import org.web3j.protocol.Web3j
 import org.web3j.protocol.core.DefaultBlockParameter
 import org.web3j.protocol.core.methods.request.EthFilter
 import org.web3j.protocol.core.methods.request.Transaction
+import org.web3j.protocol.core.methods.response.EthCall
 import org.web3j.protocol.core.methods.response.EthLog
 import org.web3j.protocol.exceptions.ClientConnectionException
 import org.web3j.protocol.http.HttpService
@@ -27,14 +28,8 @@ import java.math.BigInteger
 class Web3jWrapper(private var web3j: Web3j
 ) {
 
-    companion object {
-        private const val TRANSFER_EVENT = "Transfer"
-        private const val BALANCE_METHOD = "balanceOf"
-        private const val ERROR_TRANSACTION_STATUS = "0x0"
-        private const val POOL_SIZE = 10
-    }
-
     private var server: String? = null
+
 
     fun init(server: String?) {
         this.server = server
@@ -50,7 +45,6 @@ class Web3jWrapper(private var web3j: Web3j
             disconnect = true
         } finally {
             if (disconnect) {
-                println("Disconnected!")
                 web3j = Web3j.build(HttpService(server))
                 getAddressesFromTransferEvents(tokenAddress, fromBlock, toBlock)
             }
@@ -64,10 +58,19 @@ class Web3jWrapper(private var web3j: Web3j
     fun getTokenBalanceAtBlock(address: String, tokenAddress: String?, blockNumber: Int): BigInteger {
         val function = Function(BALANCE_METHOD, listOf(Address(address)), listOf(object : TypeReference<Uint256>() {}))
         val encodedFunction = FunctionEncoder.encode(function)
-        val result = web3j.ethCall(
-                Transaction.createFunctionCallTransaction(null, null, ManagedTransaction.GAS_PRICE, Contract.GAS_LIMIT, tokenAddress, encodedFunction),
-                DefaultBlockParameter.valueOf(blockNumber.toBigInteger()))
-                .send()
+        var result = EthCall()
+        try {
+            result = web3j.ethCall(
+                    Transaction.createFunctionCallTransaction(null, null, ManagedTransaction.GAS_PRICE, Contract.GAS_LIMIT, tokenAddress, encodedFunction),
+                    DefaultBlockParameter.valueOf(blockNumber.toBigInteger()))
+                    .send()
+        } catch (e: ClientConnectionException) {
+            getTokenBalanceAtBlock(address, tokenAddress, blockNumber)
+        }
+
+        if (result.value == null) {
+            return BigInteger.ZERO
+        }
 
         return FunctionReturnDecoder.decode(result.value, function.outputParameters).first().value as BigInteger
     }
@@ -97,5 +100,12 @@ class Web3jWrapper(private var web3j: Web3j
 
     private fun decodeAddress(rawData: String) =
             FunctionReturnDecoder.decodeIndexedValue(rawData, object : TypeReference<Address>() {}) as Address
+
+    companion object {
+        private const val TRANSFER_EVENT = "Transfer"
+        private const val BALANCE_METHOD = "balanceOf"
+        private const val ERROR_TRANSACTION_STATUS = "0x0"
+        private const val POOL_SIZE = 10
+    }
 
 }

@@ -12,7 +12,9 @@ import org.web3j.protocol.Web3j
 import org.web3j.protocol.core.DefaultBlockParameter
 import org.web3j.protocol.core.methods.request.EthFilter
 import org.web3j.protocol.core.methods.request.Transaction.createFunctionCallTransaction
+import org.web3j.protocol.core.methods.response.EthCall
 import org.web3j.protocol.core.methods.response.EthLog
+import org.web3j.protocol.exceptions.ClientConnectionException
 import org.web3j.protocol.http.HttpService
 import org.web3j.tx.Contract.GAS_LIMIT
 import org.web3j.tx.ManagedTransaction.GAS_PRICE
@@ -37,7 +39,6 @@ class TokenSnapshot(
         private val filename: String = "snapshot_at_block_$toBlock.csv"
 
 ) {
-
 
     private var writer = PrintWriter(filename, "UTF-8")
     private var web3j: Web3j = Web3j.build(HttpService(server))
@@ -94,6 +95,10 @@ class TokenSnapshot(
             }
         }
 
+        if (ethLog.logs == null || ethLog.logs.isEmpty()) {
+            return emptySet()
+        }
+
         val ethTransferLogs: MutableList<EthLog.LogResult<Any>> = ethLog.logs
 
         return fetchAddressesFromLogs(ethTransferLogs)
@@ -135,10 +140,19 @@ class TokenSnapshot(
     private fun getTokenBalance(address: Address): BigInteger {
         val function = Function(BALANCE_METHOD, listOf(address), listOf(object : TypeReference<Uint256>() {}))
         val encodedFunction = FunctionEncoder.encode(function)
-        val result = web3j.ethCall(
-                createFunctionCallTransaction(null, null, GAS_PRICE, GAS_LIMIT, this.address, encodedFunction),
-                DefaultBlockParameter.valueOf(toBlock?.toBigInteger()))
-                .send()
+        var result = EthCall()
+        try {
+            result = web3j.ethCall(
+                    createFunctionCallTransaction(null, null, GAS_PRICE, GAS_LIMIT, this.address, encodedFunction),
+                    DefaultBlockParameter.valueOf(toBlock?.toBigInteger()))
+                    .send()
+        } catch (e: ClientConnectionException) {
+            getTokenBalance(address)
+        }
+
+        if (result.value == null) {
+            return BigInteger.ZERO
+        }
 
         return FunctionReturnDecoder.decode(result.value, function.outputParameters).first().value as BigInteger
     }
