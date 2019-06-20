@@ -17,16 +17,14 @@ import org.web3j.protocol.core.methods.response.EthCall
 import org.web3j.protocol.core.methods.response.EthLog
 import org.web3j.protocol.exceptions.ClientConnectionException
 import org.web3j.protocol.http.HttpService
-import org.web3j.tx.Contract
-import org.web3j.tx.ManagedTransaction
+import org.web3j.tx.gas.DefaultGasProvider.*
 import java.math.BigInteger
 
 /**
  * @author Igor Pahomov
  */
 @Component
-class Web3jWrapper(private var web3j: Web3j
-) {
+class Web3jWrapper(private var web3j: Web3j) {
 
     private var server: String? = null
 
@@ -45,9 +43,18 @@ class Web3jWrapper(private var web3j: Web3j
             disconnect = true
         } finally {
             if (disconnect) {
+                web3j.shutdown()
                 web3j = Web3j.build(HttpService(server))
-                getAddressesFromTransferEvents(tokenAddress, fromBlock, toBlock)
+                return getAddressesFromTransferEvents(tokenAddress, fromBlock, toBlock)
             }
+        }
+
+        if (ethLog.logs != null && ethLog.result.isEmpty()) {
+            return emptySet()
+        }
+
+        if (ethLog.logs == null) {
+            return getAddressesFromTransferEvents(tokenAddress, fromBlock, toBlock)
         }
 
         val ethTransferLogs: MutableList<EthLog.LogResult<Any>> = ethLog.logs
@@ -58,18 +65,19 @@ class Web3jWrapper(private var web3j: Web3j
     fun getTokenBalanceAtBlock(address: String, tokenAddress: String?, blockNumber: Int): BigInteger {
         val function = Function(BALANCE_METHOD, listOf(Address(address)), listOf(object : TypeReference<Uint256>() {}))
         val encodedFunction = FunctionEncoder.encode(function)
-        var result = EthCall()
+
+        val result: EthCall
         try {
             result = web3j.ethCall(
-                    Transaction.createFunctionCallTransaction(null, null, ManagedTransaction.GAS_PRICE, Contract.GAS_LIMIT, tokenAddress, encodedFunction),
+                    Transaction.createFunctionCallTransaction(null, null, GAS_PRICE, GAS_LIMIT, tokenAddress, encodedFunction),
                     DefaultBlockParameter.valueOf(blockNumber.toBigInteger()))
                     .send()
         } catch (e: ClientConnectionException) {
-            getTokenBalanceAtBlock(address, tokenAddress, blockNumber)
+            return getTokenBalanceAtBlock(address, tokenAddress, blockNumber)
         }
 
         if (result.value == null) {
-            return BigInteger.ZERO
+            return getTokenBalanceAtBlock(address, tokenAddress, blockNumber)
         }
 
         return FunctionReturnDecoder.decode(result.value, function.outputParameters).first().value as BigInteger
@@ -84,8 +92,8 @@ class Web3jWrapper(private var web3j: Web3j
                 .addSingleTopic(EventEncoder.encode(
                         Event(
                                 TRANSFER_EVENT,
-                                listOf(object : TypeReference<Address>() {}, object : TypeReference<Address>() {}) as List<TypeReference<*>>?,
-                                listOf(object : TypeReference<Uint256>() {}) as List<TypeReference<*>>?
+                                listOf(object : TypeReference<Address>() {}, object : TypeReference<Address>() {},
+                                        object : TypeReference<Uint256>() {})
                         )))
     }
 
