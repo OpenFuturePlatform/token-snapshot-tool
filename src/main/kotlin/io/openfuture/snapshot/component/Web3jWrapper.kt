@@ -16,25 +16,13 @@ import org.web3j.protocol.core.methods.request.Transaction
 import org.web3j.protocol.core.methods.response.EthCall
 import org.web3j.protocol.core.methods.response.EthLog
 import org.web3j.protocol.exceptions.ClientConnectionException
-import org.web3j.protocol.http.HttpService
 import org.web3j.tx.gas.DefaultGasProvider.*
 import java.math.BigInteger
 
-/**
- * @author Igor Pahomov
- */
 @Component
 class Web3jWrapper(private var web3j: Web3j) {
 
-    private var server: String? = null
-
-
-    fun init(server: String?) {
-        this.server = server
-        this.web3j = Web3j.build(HttpService(server))
-    }
-
-    fun getAddressesFromTransferEvents(tokenAddress: String?, fromBlock: Int, toBlock: Int): Set<Address> {
+    fun getAddressesFromTransferEvents(tokenAddress: String, fromBlock: Int, toBlock: Int): Set<Address> {
         var ethLog = EthLog()
         var disconnect = false
         try {
@@ -44,7 +32,6 @@ class Web3jWrapper(private var web3j: Web3j) {
         } finally {
             if (disconnect) {
                 web3j.shutdown()
-                web3j = Web3j.build(HttpService(server))
                 return getAddressesFromTransferEvents(tokenAddress, fromBlock, toBlock)
             }
         }
@@ -62,7 +49,7 @@ class Web3jWrapper(private var web3j: Web3j) {
         return fetchAddressesFromLogs(ethTransferLogs)
     }
 
-    fun getTokenBalanceAtBlock(address: String, tokenAddress: String?, blockNumber: Int): BigInteger {
+    fun getTokenBalanceAtBlock(address: String, tokenAddress: String, blockNumber: Int): BigInteger {
         val function = Function(BALANCE_METHOD, listOf(Address(address)), listOf(object : TypeReference<Uint256>() {}))
         val encodedFunction = FunctionEncoder.encode(function)
 
@@ -83,7 +70,7 @@ class Web3jWrapper(private var web3j: Web3j) {
         return FunctionReturnDecoder.decode(result.value, function.outputParameters).first().value as BigInteger
     }
 
-    private fun createTransferFilter(address: String?, fromBlock: Int, toBlock: Int): EthFilter {
+    private fun createTransferFilter(address: String, fromBlock: Int, toBlock: Int): EthFilter {
         return EthFilter(
                 DefaultBlockParameter.valueOf(fromBlock.toBigInteger()),
                 DefaultBlockParameter.valueOf(toBlock.toBigInteger()),
@@ -112,8 +99,6 @@ class Web3jWrapper(private var web3j: Web3j) {
     companion object {
         private const val TRANSFER_EVENT = "Transfer"
         private const val BALANCE_METHOD = "balanceOf"
-        private const val ERROR_TRANSACTION_STATUS = "0x0"
-        private const val POOL_SIZE = 10
     }
 
 }

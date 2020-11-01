@@ -1,21 +1,13 @@
 package io.openfuture.snapshot
 
-import io.openfuture.snapshot.service.CommandLine
-import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan
 import org.springframework.boot.runApplication
 
+@ConfigurationPropertiesScan("io.openfuture.snapshot.property")
 @SpringBootApplication
-class ToolApplication(private val commandLine: CommandLine) : CommandLineRunner {
-
-    override fun run(vararg args: String?) {
-        commandLine.start(args)
-    }
-}
+class ToolApplication
 
 fun main(args: Array<String>) {
     runApplication<ToolApplication>(*args)
 }
-
-
-
