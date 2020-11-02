@@ -15,9 +15,7 @@ import kotlin.math.pow
 
 @ConditionalOnProperty(name = ["export-strategy"], havingValue = "archived")
 @Component
-class ArchivedNodeBasedSnapshotExporter(
-        private val web3j: Web3jWrapper
-) : SnapshotExporter {
+class ArchivedNodeBasedSnapshotExporter(private val web3j: Web3jWrapper) : SnapshotExporter {
 
     private val executor = Executors.newFixedThreadPool(POOL_SIZE)
 
