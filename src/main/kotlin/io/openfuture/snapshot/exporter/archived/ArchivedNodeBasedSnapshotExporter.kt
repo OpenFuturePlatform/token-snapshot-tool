@@ -4,19 +4,20 @@ import io.openfuture.snapshot.component.Web3jWrapper
 import io.openfuture.snapshot.dto.ExportSnapshotRequest
 import io.openfuture.snapshot.exporter.SnapshotExporter
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
-import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor
-import org.springframework.stereotype.Service
+import org.springframework.stereotype.Component
 import org.web3j.abi.datatypes.Address
 import java.io.File
 import java.io.PrintWriter
 import java.math.BigDecimal
+import java.util.concurrent.Executors
 
-@Service
 @ConditionalOnProperty(name = ["export-strategy"], havingValue = "archived")
+@Component
 class ArchivedNodeBasedSnapshotExporter(
-        private val web3j: Web3jWrapper,
-        private val executor: ThreadPoolTaskExecutor
+        private val web3j: Web3jWrapper
 ) : SnapshotExporter {
+
+    private val executor = Executors.newFixedThreadPool(POOL_SIZE)
 
     override fun export(request: ExportSnapshotRequest) {
 
@@ -43,7 +44,7 @@ class ArchivedNodeBasedSnapshotExporter(
         }
 
         executor.shutdown()
-        while (!executor.threadPoolExecutor.isTerminating) {
+        while (!executor.isTerminated) {
         }
 
         writer.close()
@@ -85,7 +86,8 @@ class ArchivedNodeBasedSnapshotExporter(
     }
 
     companion object {
-        private const val BATCH_SIZE = 10
+        private const val BATCH_SIZE = 20
+        private const val POOL_SIZE = 10
         const val HEADER = "ADDRESS,BALANCE"
     }
 

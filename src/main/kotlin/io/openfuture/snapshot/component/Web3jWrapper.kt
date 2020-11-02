@@ -15,25 +15,18 @@ import org.web3j.protocol.core.methods.request.EthFilter
 import org.web3j.protocol.core.methods.request.Transaction
 import org.web3j.protocol.core.methods.response.EthCall
 import org.web3j.protocol.core.methods.response.EthLog
-import org.web3j.protocol.exceptions.ClientConnectionException
 import org.web3j.tx.gas.DefaultGasProvider.*
 import java.math.BigInteger
 
 @Component
-class Web3jWrapper(private var web3j: Web3j) {
+class Web3jWrapper(private val web3j: Web3j) {
 
     fun getAddressesFromTransferEvents(tokenAddress: String, fromBlock: Int, toBlock: Int): Set<Address> {
-        var ethLog = EthLog()
-        var disconnect = false
+        val ethLog: EthLog
         try {
             ethLog = web3j.ethGetLogs(createTransferFilter(tokenAddress, fromBlock, toBlock)).send()
-        } catch (e: ClientConnectionException) {
-            disconnect = true
-        } finally {
-            if (disconnect) {
-                web3j.shutdown()
-                return getAddressesFromTransferEvents(tokenAddress, fromBlock, toBlock)
-            }
+        } catch (e: Exception) {
+            return getAddressesFromTransferEvents(tokenAddress, fromBlock, toBlock)
         }
 
         if (ethLog.logs != null && ethLog.result.isEmpty()) {
@@ -59,7 +52,7 @@ class Web3jWrapper(private var web3j: Web3j) {
                     Transaction.createFunctionCallTransaction(null, null, GAS_PRICE, GAS_LIMIT, tokenAddress, encodedFunction),
                     DefaultBlockParameter.valueOf(blockNumber.toBigInteger()))
                     .send()
-        } catch (e: ClientConnectionException) {
+        } catch (e: Exception) {
             return getTokenBalanceAtBlock(address, tokenAddress, blockNumber)
         }
 

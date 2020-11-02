@@ -23,7 +23,8 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-validation')
 
     // Ethereum
-    implementation('org.web3j:core:5.0.0')
+    implementation('org.web3j:core:4.6.3')
+    implementation('com.squareup.okhttp3:okhttp:4.8.1')
 
     // Kotlin
     implementation('org.jetbrains.kotlin:kotlin-reflect')

@@ -1,6 +1,7 @@
 # ERC-20 TOKEN SNAPSHOT
 
-ERC-20 TOKEN SNAPSHOT exports to csv file of token balance of erc-20 smart contract at specific block
+ERC-20 TOKEN SNAPSHOT exports token balance of erc-20 smart contract at specific block to csv file.
+
 There are two strategies to obtain balance:
    1. From archived node
    2. From transfer events
