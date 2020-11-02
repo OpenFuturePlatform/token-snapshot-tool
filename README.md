@@ -22,4 +22,5 @@ Required arguments:
 
 Optional arguments:
 * exportStrategy (Default is transfer-event)
-* fileName (snapshot_at_FromBlockNumber_toBlockNumber.csv)
+* fileName (Default is snapshot_at_FromBlockNumber_toBlockNumber.csv)
+* decimals (Default is 8)
