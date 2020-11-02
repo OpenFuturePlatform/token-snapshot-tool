@@ -10,10 +10,10 @@ import javax.validation.constraints.NotNull
 @ConstructorBinding
 @ConfigurationProperties
 @Validated
-data class Properties(
+data class ExportProperties(
         @field:NotNull val from: Int?,
         @field:NotNull val to: Int?,
-        @field:NotNull val decimals: BigInteger?,
+        @field:NotNull val contractDecimals: BigInteger?,
         @field:NotNull @field:NotBlank val nodeAddress: String?,
         @field:NotNull @field:NotBlank val fileName: String?,
         @field:NotNull @field:NotBlank val contractAddress: String?
