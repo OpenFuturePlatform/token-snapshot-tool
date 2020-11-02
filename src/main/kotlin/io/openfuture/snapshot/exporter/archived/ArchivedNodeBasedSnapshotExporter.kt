@@ -9,7 +9,9 @@ import org.web3j.abi.datatypes.Address
 import java.io.File
 import java.io.PrintWriter
 import java.math.BigDecimal
+import java.math.BigInteger
 import java.util.concurrent.Executors
+import kotlin.math.pow
 
 @ConditionalOnProperty(name = ["export-strategy"], havingValue = "archived")
 @Component
@@ -35,7 +37,7 @@ class ArchivedNodeBasedSnapshotExporter(
                 val addresses = web3j.getAddressesFromTransferEvents(request.address, nextBatch, blockNumber)
                 println("Fetched addresses ${addresses.size}")
 
-                val balances = getBalancesAtBlock(addresses, request.address, request.toBlock)
+                val balances = getBalancesAtBlock(addresses, request.address, request.toBlock, request.decimals)
 
                 writeResult(balances, writer)
 
@@ -51,11 +53,11 @@ class ArchivedNodeBasedSnapshotExporter(
         checkDuplicateAddresses(request.fileName)
     }
 
-    private fun getBalancesAtBlock(addresses: Set<Address>, tokenAddress: String, blockNumber: Int): Map<String, BigDecimal> {
+    private fun getBalancesAtBlock(addresses: Set<Address>, tokenAddress: String, blockNumber: Int, decimals: BigInteger): Map<String, BigDecimal> {
         return addresses
                 .map {
                     val balance = web3j.getTokenBalanceAtBlock(it.value, tokenAddress, blockNumber)
-                    it.value to balance.toBigDecimal()
+                    it.value to BigDecimal(balance.toDouble() * 10.0.pow(-decimals.toDouble()))
                 }
                 .toMap()
     }

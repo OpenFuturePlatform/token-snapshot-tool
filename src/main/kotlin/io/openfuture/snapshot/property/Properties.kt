@@ -3,6 +3,7 @@ package io.openfuture.snapshot.property
 import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.boot.context.properties.ConstructorBinding
 import org.springframework.validation.annotation.Validated
+import java.math.BigInteger
 import javax.validation.constraints.NotBlank
 import javax.validation.constraints.NotNull
 
@@ -12,6 +13,7 @@ import javax.validation.constraints.NotNull
 data class Properties(
         @field:NotNull val from: Int?,
         @field:NotNull val to: Int?,
+        @field:NotNull val decimals: BigInteger?,
         @field:NotNull @field:NotBlank val nodeAddress: String?,
         @field:NotNull @field:NotBlank val fileName: String?,
         @field:NotNull @field:NotBlank val contractAddress: String?

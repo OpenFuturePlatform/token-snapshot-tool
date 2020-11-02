@@ -30,7 +30,8 @@ class SnapshotRunner(
                 properties.contractAddress!!,
                 properties.from!!,
                 properties.to!!,
-                properties.fileName!!
+                properties.fileName!!,
+                properties.decimals!!
         )
     }
 
