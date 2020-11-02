@@ -1,7 +1,9 @@
-package io.openfuture.snapshot.service
+package io.openfuture.snapshot.exporter.archived
 
 import io.openfuture.snapshot.component.Web3jWrapper
-import io.openfuture.snapshot.dto.SnapshotRequest
+import io.openfuture.snapshot.dto.ExportSnapshotRequest
+import io.openfuture.snapshot.exporter.SnapshotExporter
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor
 import org.springframework.stereotype.Service
 import org.web3j.abi.datatypes.Address
@@ -10,28 +12,29 @@ import java.io.PrintWriter
 import java.math.BigDecimal
 
 @Service
-class SnapshotService(
+@ConditionalOnProperty(name = ["export-strategy"], havingValue = "archived")
+class ArchivedNodeBasedSnapshotExporter(
         private val web3j: Web3jWrapper,
         private val executor: ThreadPoolTaskExecutor
-) {
+) : SnapshotExporter {
 
-    fun batchSnapshotToCsvFile(snapshotRequest: SnapshotRequest) {
+    override fun export(request: ExportSnapshotRequest) {
 
-        val writer = PrintWriter(snapshotRequest.fileName, "UTF-8")
+        val writer = PrintWriter(request.fileName, "UTF-8")
 
         writer.println(HEADER)
 
-        for (blockNumber in snapshotRequest.toBlock downTo snapshotRequest.fromBlock step BATCH_SIZE) {
+        for (blockNumber in request.toBlock downTo request.fromBlock step BATCH_SIZE) {
             var nextBatch = blockNumber - BATCH_SIZE + 1
-            if (nextBatch <= snapshotRequest.fromBlock) nextBatch = snapshotRequest.fromBlock
+            if (nextBatch <= request.fromBlock) nextBatch = request.fromBlock
 
             executor.execute {
                 println("Batch snapshot from block $blockNumber to block $nextBatch")
 
-                val addresses = web3j.getAddressesFromTransferEvents(snapshotRequest.address, nextBatch, blockNumber)
+                val addresses = web3j.getAddressesFromTransferEvents(request.address, nextBatch, blockNumber)
                 println("Fetched addresses ${addresses.size}")
 
-                val balances = getBalancesAtBlock(addresses, snapshotRequest.address, snapshotRequest.toBlock)
+                val balances = getBalancesAtBlock(addresses, request.address, request.toBlock)
 
                 writeResult(balances, writer)
 
@@ -44,6 +47,7 @@ class SnapshotService(
         }
 
         writer.close()
+        checkDuplicateAddresses(request.fileName)
     }
 
     private fun getBalancesAtBlock(addresses: Set<Address>, tokenAddress: String, blockNumber: Int): Map<String, BigDecimal> {
@@ -58,6 +62,26 @@ class SnapshotService(
     private fun writeResult(results: Map<String, BigDecimal>, writer: PrintWriter) {
         results.forEach { writer.println("${it.key},${it.value}") }
         writer.flush()
+    }
+
+    private fun checkDuplicateAddresses(fileName: String) {
+        val balances = read(fileName)
+        writeResult(balances, fileName)
+    }
+
+    private fun read(path: String): Set<List<String>> {
+        val lines = File("${System.getProperty("user.dir")}/$path").readLines()
+
+        return lines.map {
+            it.split(",")
+        }.toSet()
+    }
+
+    private fun writeResult(results: Set<List<String?>>, fileName: String) {
+        val writer = PrintWriter("clear_$fileName", "UTF-8")
+        results.forEach { writer.println("${it[0]},${it[1]}") }
+        writer.flush()
+        writer.close()
     }
 
     companion object {

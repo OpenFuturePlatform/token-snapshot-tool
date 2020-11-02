@@ -1,6 +1,6 @@
 package io.openfuture.snapshot.dto
 
-data class SnapshotRequest(
+data class ExportSnapshotRequest(
         val address: String,
         val fromBlock: Int,
         val toBlock: Int,
