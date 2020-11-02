@@ -10,8 +10,6 @@ import org.web3j.protocol.http.HttpService
 class Web3jConfig {
 
     @Bean
-    fun web3j(properties: Properties): Web3j {
-        return Web3j.build(HttpService(properties.nodeAddress))
-    }
+    fun web3j(properties: Properties): Web3j = Web3j.build(HttpService(properties.nodeAddress))
 
 }
