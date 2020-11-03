@@ -3,23 +3,23 @@ package io.openfuture.snapshot.exporter.archived
 import io.openfuture.snapshot.component.Web3jWrapper
 import io.openfuture.snapshot.dto.ExportSnapshotRequest
 import io.openfuture.snapshot.exporter.SnapshotExporter
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
+import io.openfuture.snapshot.exporter.SnapshotStrategy
 import org.springframework.stereotype.Component
 import org.web3j.abi.datatypes.Address
 import java.io.File
 import java.io.PrintWriter
 import java.math.BigDecimal
-import java.math.BigInteger
 import java.util.concurrent.Executors
 import kotlin.math.pow
 
-@ConditionalOnProperty(name = ["export-strategy"], havingValue = "archived")
 @Component
 class ArchivedNodeBasedSnapshotExporter(private val web3j: Web3jWrapper) : SnapshotExporter {
 
     private val executor = Executors.newFixedThreadPool(POOL_SIZE)
 
     override fun export(request: ExportSnapshotRequest) {
+
+        web3j.init(request.nodeAddress)
 
         val writer = PrintWriter(request.fileName, "UTF-8")
 
@@ -51,7 +51,9 @@ class ArchivedNodeBasedSnapshotExporter(private val web3j: Web3jWrapper) : Snaps
         checkDuplicateAddresses(request.fileName)
     }
 
-    private fun getBalancesAtBlock(addresses: Set<Address>, tokenAddress: String, blockNumber: Int, decimals: BigInteger): Map<String, BigDecimal> {
+    override fun strategy(): SnapshotStrategy = SnapshotStrategy.ARCHIVED
+
+    private fun getBalancesAtBlock(addresses: Set<Address>, tokenAddress: String, blockNumber: Int, decimals: Int): Map<String, BigDecimal> {
         return addresses
                 .map {
                     val balance = web3j.getTokenBalanceAtBlock(it.value, tokenAddress, blockNumber)

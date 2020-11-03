@@ -4,4 +4,6 @@ import io.openfuture.snapshot.dto.ExportSnapshotRequest
 
 interface SnapshotExporter {
     fun export(request: ExportSnapshotRequest)
+
+    fun strategy(): SnapshotStrategy
 }

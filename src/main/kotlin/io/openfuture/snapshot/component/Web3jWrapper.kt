@@ -15,11 +15,18 @@ import org.web3j.protocol.core.methods.request.EthFilter
 import org.web3j.protocol.core.methods.request.Transaction
 import org.web3j.protocol.core.methods.response.EthCall
 import org.web3j.protocol.core.methods.response.EthLog
+import org.web3j.protocol.http.HttpService
 import org.web3j.tx.gas.DefaultGasProvider.*
 import java.math.BigInteger
 
 @Component
-class Web3jWrapper(private val web3j: Web3j) {
+class Web3jWrapper {
+
+    private lateinit var web3j: Web3j
+
+    fun init(nodeAddress: String) {
+        this.web3j = Web3j.build(HttpService(nodeAddress))
+    }
 
     fun getAddressesFromTransferEvents(tokenAddress: String, fromBlock: Int, toBlock: Int): Set<Address> {
         val ethLog: EthLog
