@@ -1,6 +1,5 @@
-package io.openfuture.snapshot.component
+package io.openfuture.snapshot.wrapper
 
-import org.springframework.stereotype.Component
 import org.web3j.abi.EventEncoder
 import org.web3j.abi.FunctionEncoder
 import org.web3j.abi.FunctionReturnDecoder
@@ -19,7 +18,6 @@ import org.web3j.protocol.http.HttpService
 import org.web3j.tx.gas.DefaultGasProvider.*
 import java.math.BigInteger
 
-@Component
 class Web3jWrapper {
 
     private lateinit var web3j: Web3j

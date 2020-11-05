@@ -1,13 +1,7 @@
 plugins {
-    id 'jacoco'
     id 'idea'
     id 'org.jetbrains.kotlin.jvm' version '1.4.0'
-    id 'org.jetbrains.kotlin.plugin.spring' version '1.4.0'
-    id 'org.jetbrains.kotlin.kapt' version '1.4.0'
-    id 'org.springframework.boot' version '2.3.4.RELEASE'
 }
-
-apply plugin: 'io.spring.dependency-management'
 
 group = "io.openfuture.snapshot"
 version = "0.0.1-SNAPSHOT"
@@ -17,29 +11,28 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    //Spring
-    implementation('org.springframework.boot:spring-boot-starter')
-    implementation('org.springframework.boot:spring-boot-starter-validation')
+jar {
+    manifest { attributes('Main-Class': 'io.openfuture.snapshot.MainKt') }
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } } {
+        exclude "META-INF/*.SF"
+        exclude "META-INF/*.DSA"
+        exclude "META-INF/*.RSA"
+    }
+}
 
+dependencies {
     // Ethereum
     implementation('org.web3j:core:4.6.3')
     implementation('com.squareup.okhttp3:okhttp:4.8.1')
 
     // Kotlin
-    implementation('org.jetbrains.kotlin:kotlin-reflect')
     implementation('org.jetbrains.kotlin:kotlin-stdlib-jdk8')
 
     // Devtools
     implementation('com.github.ajalt:clikt:2.8.0')
 
-    // Tests
-    testImplementation('org.springframework.boot:spring-boot-starter-test') {
-        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-    }
-    testImplementation("io.projectreactor:reactor-test")
-    testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
-
+    implementation('org.slf4j:slf4j-api:2.0.0-alpha1')
+    implementation('org.slf4j:slf4j-simple:2.0.0-alpha1')
 }
 
 sourceSets {
@@ -60,20 +53,3 @@ compileTestKotlin {
         jvmTarget = "11"
     }
 }
-
-// Tests
-test {
-    useJUnitPlatform()
-
-    if (project.hasProperty('maxParallelForks')) {
-        maxParallelForks = project.maxParallelForks as int
-    }
-    if (project.hasProperty('forkEvery')) {
-        forkEvery = project.forkEvery as int
-    }
-}
-jacoco {
-    toolVersion = "0.8.5"
-}
-
-check.dependsOn jacocoTestReport
