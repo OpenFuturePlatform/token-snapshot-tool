@@ -7,14 +7,14 @@ class CsvSnapshotExporter {
 
     fun writeResult(outputName: String, balances: Map<String, BigDecimal>) {
         val writer = PrintWriter(outputName, "UTF-8")
-        writer.println(HEADER)
+        writer.println(HEADERS)
         balances.forEach { writer.println("${it.key},${it.value}") }
         writer.flush()
         writer.close()
     }
 
     companion object {
-        const val HEADER = "ADDRESS,BALANCE"
+        const val HEADERS = "ADDRESS,BALANCE"
     }
 
 }
