@@ -5,9 +5,7 @@ ERC-20 TOKEN SNAPSHOT exports balance of token holders of erc-20 smart contract 
 You will need an archived node address, since the application requests for the historical balance of the contract
 
 ## Running the application
-Run from command line `./gradlew clean build` to build jar file.
-
-Then `java -jar build/libs/snanshot-0.0.1-SNAPSHOT.jar --pass arguments below` to start
+Run from the command line `snapshot.sh` script
 
 Input arguments:
 * `--contract-address`  Address of token Smart contract [_required_]
