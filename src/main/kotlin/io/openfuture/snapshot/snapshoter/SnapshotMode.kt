@@ -1,7 +1,8 @@
 package io.openfuture.snapshot.snapshoter
 
 enum class SnapshotMode {
-    ARCHIVED;
+    ARCHIVED,
+    EVENT;
 
     companion object {
         fun convert(name: String): SnapshotMode {
