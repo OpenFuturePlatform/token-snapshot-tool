@@ -38,13 +38,13 @@ class CommandLineSnapshotRunner() : CliktCommand(name = "snapshot") {
             executor.execute {
                 println("Batch snapshot from block $blockNumber to block $nextBatch")
 
-                val request = buildRequest()
+                val request = buildRequest(blockNumber, nextBatch)
 
                 val result = snapshoter.getSnapshot(request)
 
                 repository.saveAll(result)
 
-                println("Added ${result.size} balances from block $nextBatch to block $blockNumber")
+                println("Added ${result.size} balances from block $blockNumber to block $nextBatch")
             }
         }
 
@@ -53,11 +53,11 @@ class CommandLineSnapshotRunner() : CliktCommand(name = "snapshot") {
         exporter.writeResult(filename, result)
     }
 
-    private fun buildRequest(): SnapshotRequest {
+    private fun buildRequest(fromBlock: Int, toBlock: Int): SnapshotRequest {
         return SnapshotRequest(
                 contractAddress!!,
-                from!!,
-                to!!,
+                fromBlock,
+                toBlock,
                 decimals
         )
     }
