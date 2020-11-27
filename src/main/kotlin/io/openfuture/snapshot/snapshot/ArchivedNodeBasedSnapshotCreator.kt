@@ -1,4 +1,4 @@
-package io.openfuture.snapshot.snapshotcreator
+package io.openfuture.snapshot.snapshot
 
 import io.openfuture.snapshot.domain.WalletState
 import org.web3j.abi.EventEncoder
@@ -57,7 +57,7 @@ class ArchivedNodeBasedSnapshotCreator(nodeAddress: String) : SnapshotCreator {
         return addresses
     }
 
-    private fun getTransferLogs(contractAddress: String, fromBlock: Int, toBlock: Int): MutableList<EthLog.LogResult<Any>> {
+    private fun getTransferLogs(contractAddress: String, fromBlock: Int, toBlock: Int): List<EthLog.LogResult<Any>> {
         return try {
             val transferFilter = createTransferFilter(contractAddress, fromBlock, toBlock)
             web3j.ethGetLogs(transferFilter).send().logs

@@ -1,4 +1,4 @@
-package io.openfuture.snapshot.snapshotcreator
+package io.openfuture.snapshot.snapshot
 
 import io.openfuture.snapshot.domain.WalletState
 

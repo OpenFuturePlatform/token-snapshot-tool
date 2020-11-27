@@ -3,11 +3,12 @@ package io.openfuture.snapshot
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.parameters.options.*
 import com.github.ajalt.clikt.parameters.types.int
-import io.openfuture.snapshot.CommandLineSnapshotRunner.Mode.*
+import io.openfuture.snapshot.CommandLineSnapshotRunner.Mode.ARCHIVED
+import io.openfuture.snapshot.CommandLineSnapshotRunner.Mode.valueOf
 import io.openfuture.snapshot.exporter.CsvSnapshotExporter
 import io.openfuture.snapshot.exporter.FileExporter
-import io.openfuture.snapshot.snapshotcreator.ArchivedNodeBasedSnapshotCreator
-import io.openfuture.snapshot.snapshotcreator.SnapshotCreator
+import io.openfuture.snapshot.snapshot.ArchivedNodeBasedSnapshotCreator
+import io.openfuture.snapshot.snapshot.SnapshotCreator
 
 class CommandLineSnapshotRunner : CliktCommand(name = "snapshot") {
 
