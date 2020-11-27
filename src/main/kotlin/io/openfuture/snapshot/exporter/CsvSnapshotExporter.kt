@@ -6,7 +6,7 @@ import java.math.BigDecimal
 
 class CsvSnapshotExporter : FileExporter {
 
-    override fun export(fileName: String, walletStates: List<WalletState>) {
+    override fun export(fileName: String, walletStates: Set<WalletState>) {
         val writer = PrintWriter(fileName, "UTF-8")
         writer.println(HEADERS)
         walletStates.forEach {

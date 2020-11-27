@@ -8,6 +8,7 @@ import io.openfuture.snapshot.exporter.CsvSnapshotExporter
 import io.openfuture.snapshot.exporter.FileExporter
 import io.openfuture.snapshot.snapshotcreator.ArchivedNodeBasedSnapshotCreator
 import io.openfuture.snapshot.snapshotcreator.SnapshotCreator
+import io.openfuture.snapshot.snapshotcreator.TransferEventBasedSnapshotCreator
 
 class CommandLineSnapshotRunner : CliktCommand(name = "snapshot") {
 
@@ -16,13 +17,14 @@ class CommandLineSnapshotRunner : CliktCommand(name = "snapshot") {
     private val to: Int by option(help = "End block number").int().required()
     private val nodeAddress: String by option(help = "Server url of node to connect").required()
     private val filename: String by option(help = "Name of csv file to save").defaultLazy { "snapshot_at_block_$to.csv" }
-    private val mode: Mode by option(help = "Snapshot mode").convert { valueOf(it) }.default(ARCHIVED)
+    private val mode: Mode by option(help = "Snapshot mode").convert { valueOf(it.toUpperCase()) }.default(EVENT)
 
     private val exporter: FileExporter = CsvSnapshotExporter()
 
     override fun run() {
         val creator: SnapshotCreator = when (mode) {
             ARCHIVED -> ArchivedNodeBasedSnapshotCreator(nodeAddress)
+            EVENT -> TransferEventBasedSnapshotCreator(nodeAddress)
         }
 
         val results = creator.snapshot(contractAddress, from, to)
@@ -30,7 +32,8 @@ class CommandLineSnapshotRunner : CliktCommand(name = "snapshot") {
     }
 
     private enum class Mode {
-        ARCHIVED;
+        ARCHIVED,
+        EVENT
     }
 
 }
