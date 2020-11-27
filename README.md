@@ -2,12 +2,15 @@
 
 ERC-20 TOKEN SNAPSHOT exports balance of token holders of erc-20 smart contract at a specific block to csv file.
 
-You will need an archived node address, since the application requests for the historical balance of the contract
+There are two modes to create a snapshot.
+1. **ARCHIVED** You will need an archived node address,
+ since the application requests for the historical balance of the contract.
+ 
+2. **EVENT** Requires no special node. Collects balance from transfer events.
+ Works with Infura free plan.
 
 ## Running the application
-Run from command line `./gradlew clean build` to build jar file.
-
-Then `java -jar build/libs/snanshot-0.0.1-SNAPSHOT.jar --pass arguments below` to start
+Run from the command line `snapshot.sh` script
 
 Input arguments:
 * `--contract-address`  Address of token Smart contract [_required_]

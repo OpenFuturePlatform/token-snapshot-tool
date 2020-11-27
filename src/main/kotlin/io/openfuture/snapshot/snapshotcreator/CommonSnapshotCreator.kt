@@ -1,7 +1,5 @@
-package io.openfuture.snapshot.snapshoter
+package io.openfuture.snapshot.snapshotcreator
 
-import io.openfuture.snapshot.dto.SnapshotDto
-import io.openfuture.snapshot.dto.SnapshotRequest
 import org.web3j.abi.EventEncoder
 import org.web3j.abi.FunctionReturnDecoder
 import org.web3j.abi.TypeReference
@@ -14,32 +12,18 @@ import org.web3j.protocol.core.methods.request.EthFilter
 import org.web3j.protocol.core.methods.response.EthLog
 import org.web3j.protocol.exceptions.ClientConnectionException
 import org.web3j.protocol.http.HttpService
-import java.math.BigDecimal
-import kotlin.math.pow
 
-abstract class Snapshoter(nodeAddress: String) {
+abstract class CommonSnapshotCreator(nodeAddress: String) : SnapshotCreator {
 
     protected val web3j: Web3j = Web3j.build(HttpService(nodeAddress))
 
-    fun getSnapshot(request: SnapshotRequest): List<SnapshotDto> {
+    protected fun getTransferLogs(contractAddress: String, fromBlock: Int, toBlock: Int): MutableList<EthLog.LogResult<Any>> {
         return try {
-            val result = snapshot(request.fromBlock, request.toBlock, request.contractAddress)
-            result.map {
-                it.balance = BigDecimal(it.balance.toDouble() * 10.0.pow(-request.decimals.toDouble()))
-                it
-            }
+            val transferFilter = createTransferFilter(contractAddress, fromBlock, toBlock)
+            web3j.ethGetLogs(transferFilter).send().logs
         } catch (ex: ClientConnectionException) {
-            getSnapshot(request)
+            getTransferLogs(contractAddress, fromBlock, toBlock)
         }
-    }
-
-    protected abstract fun snapshot(from: Int, to: Int, contractAddress: String): List<SnapshotDto>
-
-    fun getLatestBlockNumber(): Int = web3j.ethBlockNumber().send().blockNumber.toInt()
-
-    protected fun getLogs(contractAddress: String, fromBlock: Int, toBlock: Int): MutableList<EthLog.LogResult<Any>> {
-        val transferFilter = createTransferFilter(contractAddress, fromBlock, toBlock)
-        return web3j.ethGetLogs(transferFilter).send().logs
     }
 
     protected fun decodeAddress(rawData: String) =
@@ -60,8 +44,8 @@ abstract class Snapshoter(nodeAddress: String) {
     }
 
     companion object {
+        const val BATCH_SIZE = 20
         const val TRANSFER_EVENT = "Transfer"
-        const val BALANCE_METHOD = "balanceOf"
     }
 
 }
