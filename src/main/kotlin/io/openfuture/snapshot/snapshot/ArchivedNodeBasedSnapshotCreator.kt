@@ -1,14 +1,17 @@
-package io.openfuture.snapshot.snapshotcreator
+package io.openfuture.snapshot.snapshot
 
 import io.openfuture.snapshot.domain.WalletState
+import org.web3j.abi.EventEncoder
 import org.web3j.abi.FunctionEncoder
 import org.web3j.abi.FunctionReturnDecoder
 import org.web3j.abi.TypeReference
 import org.web3j.abi.datatypes.Address
+import org.web3j.abi.datatypes.Event
 import org.web3j.abi.datatypes.Function
 import org.web3j.abi.datatypes.generated.Uint256
 import org.web3j.protocol.Web3j
 import org.web3j.protocol.core.DefaultBlockParameter
+import org.web3j.protocol.core.methods.request.EthFilter
 import org.web3j.protocol.core.methods.request.Transaction
 import org.web3j.protocol.core.methods.response.EthCall
 import org.web3j.protocol.core.methods.response.EthLog
@@ -19,9 +22,11 @@ import org.web3j.utils.Convert
 import java.math.BigDecimal
 import java.math.BigInteger
 
-class ArchivedNodeBasedSnapshotCreator(nodeAddress: String) : CommonSnapshotCreator(nodeAddress) {
+class ArchivedNodeBasedSnapshotCreator(nodeAddress: String) : SnapshotCreator {
 
-    override fun snapshot(contractAddress: String, fromBlock: Int, toBlock: Int): Set<WalletState> {
+    private val web3j: Web3j = Web3j.build(HttpService(nodeAddress))
+
+    override fun snapshot(contractAddress: String, fromBlock: Int, toBlock: Int): List<WalletState> {
         val addresses = batchFetchAddresses(contractAddress, fromBlock, toBlock)
 
         println("Fetched ${addresses.size} addresses")
@@ -33,7 +38,7 @@ class ArchivedNodeBasedSnapshotCreator(nodeAddress: String) : CommonSnapshotCrea
             val converted = Convert.fromWei(balance, Convert.Unit.GWEI)
 
             WalletState(it, converted)
-        }.toSet()
+        }
     }
 
     private fun batchFetchAddresses(contractAddress: String, fromBlock: Int, toBlock: Int): Set<String> {
@@ -50,6 +55,32 @@ class ArchivedNodeBasedSnapshotCreator(nodeAddress: String) : CommonSnapshotCrea
         }
 
         return addresses
+    }
+
+    private fun getTransferLogs(contractAddress: String, fromBlock: Int, toBlock: Int): List<EthLog.LogResult<Any>> {
+        return try {
+            val transferFilter = createTransferFilter(contractAddress, fromBlock, toBlock)
+            web3j.ethGetLogs(transferFilter).send().logs
+        } catch (ex: ClientConnectionException) {
+            getTransferLogs(contractAddress, fromBlock, toBlock)
+        }
+    }
+
+    private fun decodeAddress(rawData: String) =
+            FunctionReturnDecoder.decodeIndexedValue(rawData, object : TypeReference<Address>() {}) as Address
+
+    private fun createTransferFilter(contractAddress: String, fromBlock: Int, toBlock: Int): EthFilter {
+        return EthFilter(
+                DefaultBlockParameter.valueOf(fromBlock.toBigInteger()),
+                DefaultBlockParameter.valueOf(toBlock.toBigInteger()),
+                contractAddress
+        )
+                .addSingleTopic(EventEncoder.encode(
+                        Event(
+                                TRANSFER_EVENT,
+                                listOf(object : TypeReference<Address>() {}, object : TypeReference<Address>() {},
+                                        object : TypeReference<Uint256>() {})
+                        )))
     }
 
     private fun fetchAddressesFromLogs(transferLogs: List<EthLog.LogResult<Any>>): Set<String> {
@@ -76,6 +107,8 @@ class ArchivedNodeBasedSnapshotCreator(nodeAddress: String) : CommonSnapshotCrea
     }
 
     companion object {
+        private const val BATCH_SIZE = 20
+        const val TRANSFER_EVENT = "Transfer"
         const val BALANCE_METHOD = "balanceOf"
     }
 
