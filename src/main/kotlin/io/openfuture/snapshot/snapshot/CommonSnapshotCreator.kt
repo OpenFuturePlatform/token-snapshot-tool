@@ -1,4 +1,4 @@
-package io.openfuture.snapshot.snapshotcreator
+package io.openfuture.snapshot.snapshot
 
 import org.web3j.abi.EventEncoder
 import org.web3j.abi.FunctionReturnDecoder
@@ -17,7 +17,7 @@ abstract class CommonSnapshotCreator(nodeAddress: String) : SnapshotCreator {
 
     protected val web3j: Web3j = Web3j.build(HttpService(nodeAddress))
 
-    protected fun getTransferLogs(contractAddress: String, fromBlock: Int, toBlock: Int): MutableList<EthLog.LogResult<Any>> {
+    protected fun getTransferLogs(contractAddress: String, fromBlock: Int, toBlock: Int): List<EthLog.LogResult<Any>> {
         return try {
             val transferFilter = createTransferFilter(contractAddress, fromBlock, toBlock)
             web3j.ethGetLogs(transferFilter).send().logs

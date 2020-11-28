@@ -1,4 +1,4 @@
-package io.openfuture.snapshot.snapshotcreator
+package io.openfuture.snapshot.snapshot
 
 import io.openfuture.snapshot.domain.WalletState
 import org.web3j.protocol.core.methods.response.EthLog

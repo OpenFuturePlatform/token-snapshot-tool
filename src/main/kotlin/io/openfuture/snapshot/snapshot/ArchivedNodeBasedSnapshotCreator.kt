@@ -1,4 +1,4 @@
-package io.openfuture.snapshot.snapshotcreator
+package io.openfuture.snapshot.snapshot
 
 import io.openfuture.snapshot.domain.WalletState
 import org.web3j.abi.FunctionEncoder
@@ -7,13 +7,11 @@ import org.web3j.abi.TypeReference
 import org.web3j.abi.datatypes.Address
 import org.web3j.abi.datatypes.Function
 import org.web3j.abi.datatypes.generated.Uint256
-import org.web3j.protocol.Web3j
 import org.web3j.protocol.core.DefaultBlockParameter
 import org.web3j.protocol.core.methods.request.Transaction
 import org.web3j.protocol.core.methods.response.EthCall
 import org.web3j.protocol.core.methods.response.EthLog
 import org.web3j.protocol.exceptions.ClientConnectionException
-import org.web3j.protocol.http.HttpService
 import org.web3j.tx.gas.DefaultGasProvider
 import org.web3j.utils.Convert
 import java.math.BigDecimal
