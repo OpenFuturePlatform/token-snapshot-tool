@@ -6,11 +6,9 @@ import com.github.ajalt.clikt.parameters.types.int
 import io.openfuture.snapshot.CommandLineSnapshotRunner.Mode.*
 import io.openfuture.snapshot.exporter.CsvSnapshotExporter
 import io.openfuture.snapshot.exporter.FileExporter
-import io.openfuture.snapshot.snapshotcreator.ArchivedNodeBasedSnapshotCreator
-import io.openfuture.snapshot.snapshotcreator.SnapshotCreator
-import io.openfuture.snapshot.snapshotcreator.TransferEventBasedSnapshotCreator
-import org.web3j.protocol.Web3j
-import org.web3j.protocol.http.HttpService
+import io.openfuture.snapshot.snapshot.ArchivedNodeBasedSnapshotCreator
+import io.openfuture.snapshot.snapshot.SnapshotCreator
+import io.openfuture.snapshot.snapshot.TransferEventBasedSnapshotCreator
 
 class CommandLineSnapshotRunner : CliktCommand(name = "snapshot") {
 
