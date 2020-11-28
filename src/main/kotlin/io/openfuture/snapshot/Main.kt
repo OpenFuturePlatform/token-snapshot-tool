@@ -9,6 +9,8 @@ import io.openfuture.snapshot.exporter.FileExporter
 import io.openfuture.snapshot.snapshot.ArchivedNodeBasedSnapshotCreator
 import io.openfuture.snapshot.snapshot.SnapshotCreator
 import io.openfuture.snapshot.snapshot.TransferEventBasedSnapshotCreator
+import org.web3j.protocol.Web3j
+import org.web3j.protocol.http.HttpService
 
 class CommandLineSnapshotRunner : CliktCommand(name = "snapshot") {
 
