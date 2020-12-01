@@ -10,9 +10,7 @@ There are two modes to create a snapshot.
  Works with Infura free plan.
 
 ## Running the application
-Run from command line `./gradlew clean build` to build jar file.
-
-Then `java -jar build/libs/snanshot-0.0.1-SNAPSHOT.jar --pass arguments below` to start
+Run from the command line `snapshot` script.
 
 Input arguments:
 * `-n, --node-address`      Server url of node connected to [_required_]
