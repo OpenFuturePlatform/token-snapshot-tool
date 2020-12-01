@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # BUILD CHECK
 BUILD_JAR_PATH=./build/libs/snapshot-0.0.1-SNAPSHOT.jar
