@@ -2,7 +2,6 @@ package io.openfuture.snapshot.exporter
 
 import io.openfuture.snapshot.domain.WalletState
 import java.io.PrintWriter
-import java.math.BigDecimal
 
 class CsvSnapshotExporter : FileExporter {
 
