@@ -15,10 +15,10 @@ Run from command line `./gradlew clean build` to build jar file.
 Then `java -jar build/libs/snanshot-0.0.1-SNAPSHOT.jar --pass arguments below` to start
 
 Input arguments:
+* `-n, --node-address`      Server url of node connected to [_required_]
 * `-c, --contract`          Address of token Smart contract [_required_]
 * `-f, --from`              Start block number [_optional_, default is 0]
 * `-t, --to`                End block number [_optional, default is **latest block**_]
-* `-n, --node-address`      Server url of node connected to [_required_]
 * `-d, --decimals`          Snapshot decimals value [_optional_, default is **8**]
 * `-o, --output`            Name of csv file to save [_optional_, default is **snapshot_at_block_toBlocknumber**]
 * `-m, --mode`              Snapshot mode [_optional_, possible values are ARCHIVED and EVENT, default is **EVENT**]
