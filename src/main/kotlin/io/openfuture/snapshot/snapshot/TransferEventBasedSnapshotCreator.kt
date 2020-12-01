@@ -6,10 +6,10 @@ import org.web3j.utils.Convert
 import java.math.BigDecimal
 import java.math.BigInteger
 
-class TransferEventBasedSnapshotCreator(nodeAddress: String) : CommonSnapshotCreator(nodeAddress) {
+class TransferEventBasedSnapshotCreator(nodeAddress: String) : BaseSnapshotCreator(nodeAddress) {
 
-    override fun snapshot(contractAddress: String, fromBlock: Int, toBlock: Int): Set<WalletState> {
-        val walletStateMap: MutableMap<String, BigDecimal> = mutableMapOf()
+    override fun snapshot(contractAddress: String, fromBlock: Int, toBlock: Int): List<WalletState> {
+        val walletStateMap = mutableMapOf<String, BigDecimal>()
 
         for (blockNumber in fromBlock..toBlock step BATCH_SIZE) {
             var nextBatch = blockNumber + BATCH_SIZE - 1
@@ -21,22 +21,22 @@ class TransferEventBasedSnapshotCreator(nodeAddress: String) : CommonSnapshotCre
             calculateBalances(walletStateMap, transfers)
         }
 
-        return walletStateMap.map { WalletState(it.key, it.value) }.toSet()
+        return walletStateMap.map { WalletState(it.key, it.value) }
     }
 
     private fun calculateBalances(walletStateMap: MutableMap<String, BigDecimal>, transfers: List<TransferEventData>) {
-        transfers.forEach {
-            val toAmount = walletStateMap.getOrDefault(it.toAddress, BigDecimal.ZERO)
+        for (transfer in transfers) {
+            // to
+            val toAmount = walletStateMap.getOrDefault(transfer.toAddress, BigDecimal.ZERO)
+            walletStateMap[transfer.toAddress] = toAmount.plus(transfer.amount)
 
-            walletStateMap[it.toAddress] = toAmount.plus(it.amount)
-
-            if ("0x0000000000000000000000000000000000000000" == it.fromAddress) {
-                return
+            // from
+            if (transfer.fromAddress == GENESIS_ADDRESS) {
+                continue
             }
 
-            val fromAmount = walletStateMap.getOrDefault(it.fromAddress, BigDecimal.ZERO)
-
-            walletStateMap.replace(it.fromAddress, fromAmount.minus(it.amount))
+            val fromAmount = walletStateMap.getOrDefault(transfer.fromAddress, BigDecimal.ZERO)
+            walletStateMap.replace(transfer.fromAddress, fromAmount.minus(transfer.amount))
         }
     }
 
@@ -59,5 +59,9 @@ class TransferEventBasedSnapshotCreator(nodeAddress: String) : CommonSnapshotCre
             val toAddress: String,
             val amount: BigDecimal
     )
+
+    companion object {
+        const val GENESIS_ADDRESS = "0x0000000000000000000000000000000000000000"
+    }
 
 }

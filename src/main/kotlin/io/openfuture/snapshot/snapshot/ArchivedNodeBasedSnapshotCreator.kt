@@ -17,9 +17,9 @@ import org.web3j.utils.Convert
 import java.math.BigDecimal
 import java.math.BigInteger
 
-class ArchivedNodeBasedSnapshotCreator(nodeAddress: String) : CommonSnapshotCreator(nodeAddress) {
+class ArchivedNodeBasedSnapshotCreator(nodeAddress: String) : BaseSnapshotCreator(nodeAddress) {
 
-    override fun snapshot(contractAddress: String, fromBlock: Int, toBlock: Int): Set<WalletState> {
+    override fun snapshot(contractAddress: String, fromBlock: Int, toBlock: Int): List<WalletState> {
         val addresses = batchFetchAddresses(contractAddress, fromBlock, toBlock)
 
         println("Fetched ${addresses.size} addresses")
@@ -27,11 +27,10 @@ class ArchivedNodeBasedSnapshotCreator(nodeAddress: String) : CommonSnapshotCrea
         return addresses.map {
             println("Getting balance for $it")
             val balance = getTokenBalanceAtBlock(it, contractAddress, toBlock)
-
             val converted = Convert.fromWei(balance, Convert.Unit.GWEI)
 
             WalletState(it, converted)
-        }.toSet()
+        }
     }
 
     private fun batchFetchAddresses(contractAddress: String, fromBlock: Int, toBlock: Int): Set<String> {
@@ -63,7 +62,14 @@ class ArchivedNodeBasedSnapshotCreator(nodeAddress: String) : CommonSnapshotCrea
             val function = Function(BALANCE_METHOD, listOf(Address(address)), listOf(object : TypeReference<Uint256>() {}))
             val encodedFunction = FunctionEncoder.encode(function)
             val result: EthCall = web3j.ethCall(
-                    Transaction.createFunctionCallTransaction(null, null, DefaultGasProvider.GAS_PRICE, DefaultGasProvider.GAS_LIMIT, tokenAddress, encodedFunction),
+                    Transaction.createFunctionCallTransaction(
+                            null,
+                            null,
+                            DefaultGasProvider.GAS_PRICE,
+                            DefaultGasProvider.GAS_LIMIT,
+                            tokenAddress,
+                            encodedFunction
+                    ),
                     DefaultBlockParameter.valueOf(blockNumber.toBigInteger()))
                     .send()
 
