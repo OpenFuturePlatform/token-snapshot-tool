@@ -6,5 +6,13 @@ if [ ! -f "$BUILD_JAR_PATH" ]; then
   ./gradlew build
 fi
 
+# AUTO COMPLETE
+if [ ! -f "snapshot_completion.sh" ]; then
+  chmod +x snapshot
+  _SNAPSHOT_COMPLETE=bash java -jar "$BUILD_JAR_PATH" >snapshot_completion.sh
+  echo complete -F _snapshot ./snapshot >>snapshot_completion.sh
+  source snapshot_completion.sh
+fi
+
 # RUN
 java -jar "$BUILD_JAR_PATH" "$@"
