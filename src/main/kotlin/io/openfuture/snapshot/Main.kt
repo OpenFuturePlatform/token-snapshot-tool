@@ -32,8 +32,7 @@ class CommandLineSnapshotRunner : CliktCommand(name = "snapshot") {
     }
 
     private enum class Mode {
-        ARCHIVED,
-        EVENT
+        ARCHIVED, EVENT
     }
 
 }

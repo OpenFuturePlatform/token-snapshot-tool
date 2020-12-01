@@ -13,7 +13,7 @@ import org.web3j.protocol.core.methods.response.EthLog
 import org.web3j.protocol.exceptions.ClientConnectionException
 import org.web3j.protocol.http.HttpService
 
-abstract class CommonSnapshotCreator(nodeAddress: String) : SnapshotCreator {
+abstract class BaseSnapshotCreator(nodeAddress: String) : SnapshotCreator {
 
     protected val web3j: Web3j = Web3j.build(HttpService(nodeAddress))
 
@@ -26,22 +26,27 @@ abstract class CommonSnapshotCreator(nodeAddress: String) : SnapshotCreator {
         }
     }
 
-    protected fun decodeAddress(rawData: String) =
-            FunctionReturnDecoder.decodeIndexedValue(rawData, object : TypeReference<Address>() {}) as Address
+    protected fun decodeAddress(rawData: String): Address = FunctionReturnDecoder.decodeIndexedValue(
+            rawData,
+            object : TypeReference<Address>() {}
+    ) as Address
 
     private fun createTransferFilter(contractAddress: String, fromBlock: Int, toBlock: Int): EthFilter {
         return EthFilter(
                 DefaultBlockParameter.valueOf(fromBlock.toBigInteger()),
                 DefaultBlockParameter.valueOf(toBlock.toBigInteger()),
                 contractAddress
-        )
-                .addSingleTopic(EventEncoder.encode(
-                        Event(
-                                TRANSFER_EVENT,
-                                listOf(object : TypeReference<Address>() {}, object : TypeReference<Address>() {},
-                                        object : TypeReference<Uint256>() {})
-                        )))
+        ).addSingleTopic(EventEncoder.encode(createTransferEvent()))
     }
+
+    private fun createTransferEvent() = Event(
+            TRANSFER_EVENT,
+            listOf(
+                    object : TypeReference<Address>() {},
+                    object : TypeReference<Address>() {},
+                    object : TypeReference<Uint256>() {}
+            )
+    )
 
     companion object {
         const val BATCH_SIZE = 20
