@@ -10,16 +10,17 @@ There are two modes to create a snapshot.
  Works with Infura free plan.
 
 ## Running the application
-Run from the command line `snapshot.sh` script
+Run from the command line `snapshot` script.
 
 Input arguments:
-* `--contract-address`  Address of token Smart contract [_required_]
-* `--from`              Start block number [_required_]
-* `--to`                End block number [_required_]
-* `--node-address`      Server url of node connected to [_required_]
-* `--decimals`          Snapshot decimals value [_optional_, default is **8**]
-* `--filename`          Name of csv file to save [_optional_,default is **snapshot_at_block_toBlocknumber**]
-* `-h, --help`          Show available options and exit
+* `-n, --node-address`      Server url of node connected to [_required_]
+* `-c, --contract`          Address of token Smart contract [_required_]
+* `-f, --from`              Start block number [_optional_, default is 0]
+* `-t, --to`                End block number [_optional, default is **latest block**_]
+* `-d, --decimals`          Snapshot decimals value [_optional_, default is **8**]
+* `-o, --output`            Name of csv file to save [_optional_, default is **snapshot_at_block_toBlocknumber**]
+* `-m, --mode`              Snapshot mode [_optional_, possible values are ARCHIVED and EVENT, default is **EVENT**]
+* `-h, --help`              Show available options and exit
 
 Output:
 * _clear_Your_File_Name.csv named csv file with headers **ADDRESS, BALANCE**
