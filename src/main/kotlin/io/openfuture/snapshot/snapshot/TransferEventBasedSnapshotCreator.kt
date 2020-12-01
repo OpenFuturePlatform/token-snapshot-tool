@@ -30,7 +30,7 @@ class TransferEventBasedSnapshotCreator(nodeAddress: String) : CommonSnapshotCre
 
             walletStateMap[it.toAddress] = toAmount.plus(it.amount)
 
-            if ("0x0000000000000000000000000000000000000000" == it.fromAddress) {
+            if (GENESIS_ADDRESS == it.fromAddress) {
                 return
             }
 
@@ -59,5 +59,9 @@ class TransferEventBasedSnapshotCreator(nodeAddress: String) : CommonSnapshotCre
             val toAddress: String,
             val amount: BigDecimal
     )
+
+    companion object {
+        const val GENESIS_ADDRESS = "0x0000000000000000000000000000000000000000"
+    }
 
 }
