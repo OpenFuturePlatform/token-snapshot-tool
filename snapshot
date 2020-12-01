@@ -7,12 +7,11 @@ if [ ! -f "$BUILD_JAR_PATH" ]; then
 fi
 
 # AUTO COMPLETE
-if [ ! -f "snapshot_auto_complete.sh" ]; then
-  chmod +x snapshot.sh
-  _SNAPSHOT_COMPLETE=bash java -jar "$BUILD_JAR_PATH" >snapshot_auto_complete.sh
-  echo complete -F _snapshot ./snapshot.sh >>snapshot_auto_complete.sh
-  echo source "$PWD"/snapshot_auto_complete.sh >>~/.bashrc
-  echo source "$PWD"/snapshot_auto_complete.sh >>~/.bash_profile
+if [ ! -f "snapshot_completion.sh" ]; then
+  chmod +x snapshot
+  _SNAPSHOT_COMPLETE=bash java -jar "$BUILD_JAR_PATH" >snapshot_completion.sh
+  echo complete -F _snapshot ./snapshot >>snapshot_completion.sh
+  source snapshot_completion.sh
 fi
 
 # RUN
