@@ -32,7 +32,7 @@ class ArchivedNodeBasedSnapshotCreator(nodeAddress: String) : SnapshotCreator {
 
             println("Batch fetching addresses from $blockNumber to $nextBatch blocks")
             val transfers = web3jHelper.getTransfers(contractAddress, blockNumber, nextBatch)
-            val fetchedAddresses = transfers.map { it.fromAddress }
+            val fetchedAddresses = transfers.map { it.toAddress }
 
             addresses.addAll(fetchedAddresses)
         }

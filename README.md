@@ -17,7 +17,6 @@ Input arguments:
 * `-c, --contract`          Address of token Smart contract [_required_]
 * `-f, --from`              Start block number [_optional_, default is 0]
 * `-t, --to`                End block number [_optional, default is **latest block**_]
-* `-d, --decimals`          Snapshot decimals value [_optional_, default is **8**]
 * `-o, --output`            Name of csv file to save [_optional_, default is **snapshot_at_block_toBlocknumber**]
 * `-m, --mode`              Snapshot mode [_optional_, possible values are ARCHIVED and EVENT, default is **EVENT**]
 * `-h, --help`              Show available options and exit
