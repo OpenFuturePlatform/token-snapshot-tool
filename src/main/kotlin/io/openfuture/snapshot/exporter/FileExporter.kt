@@ -4,6 +4,6 @@ import io.openfuture.snapshot.domain.WalletState
 
 interface FileExporter {
 
-    fun export(fileName: String, walletStates: List<WalletState>)
+    fun export(fileName: String, walletStates: Collection<WalletState>)
 
 }

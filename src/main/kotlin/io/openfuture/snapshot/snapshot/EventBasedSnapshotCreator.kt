@@ -37,7 +37,7 @@ class EventBasedSnapshotCreator(nodeAddress: String) : SnapshotCreator {
             }
 
             val fromAmount = walletStateMap.getOrDefault(transfer.fromAddress, BigDecimal.ZERO)
-            walletStateMap.replace(transfer.fromAddress, fromAmount.minus(transfer.amount))
+            walletStateMap[transfer.fromAddress] = fromAmount.minus(transfer.amount)
         }
     }
 

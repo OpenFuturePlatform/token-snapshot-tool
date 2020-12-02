@@ -5,7 +5,7 @@ import java.io.PrintWriter
 
 class CsvSnapshotExporter : FileExporter {
 
-    override fun export(fileName: String, walletStates: List<WalletState>) {
+    override fun export(fileName: String, walletStates: Collection<WalletState>) {
         val writer = PrintWriter(fileName, "UTF-8")
         writer.println(HEADERS)
         walletStates.forEach {
