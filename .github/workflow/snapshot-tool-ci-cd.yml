@@ -1,9 +1,8 @@
 name: Snapshot Tool CI/CD
 
-on:
-  push:
-    branches:
-      - '*'
+push:
+  branches:
+    - master
 
 jobs:
 
