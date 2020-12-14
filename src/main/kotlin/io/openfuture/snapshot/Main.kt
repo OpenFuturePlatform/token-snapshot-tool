@@ -12,7 +12,7 @@ import io.openfuture.snapshot.snapshot.ArchivedNodeBasedSnapshotCreator
 import io.openfuture.snapshot.snapshot.EventBasedSnapshotCreator
 import io.openfuture.snapshot.snapshot.SnapshotCreator
 
-class CommandLineSnapshotRunner : CliktCommand(name = "snapshot") {
+class CommandLineSnapshotRunner : CliktCommand(name = "token-snapshot") {
 
     private val nodeAddress: String by option("-n", "--node-address", help = "Server url of node to connect")
             .required()

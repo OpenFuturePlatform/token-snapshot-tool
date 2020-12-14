@@ -10,7 +10,7 @@ There are two modes to create a snapshot.
  Works with Infura free plan.
 
 ## Running the application
-Run from the command line `snapshot` script.
+Run from the command line `token-snapshot` script.
 
 Input arguments:
 * `-n, --node-address`      Server url of node connected to [_required_]
