@@ -106,4 +106,4 @@ _token_snapshot() {
   esac
 }
 
-complete -F _token_snapshot token-snapshot ./token-snapshot.sh
+complete -F _token_snapshot token-snapshot ./token-snapshot
