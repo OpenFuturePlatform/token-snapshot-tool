@@ -9,7 +9,12 @@ There are two modes to create a snapshot.
 2. **EVENT** Requires no special node. Collects balance from transfer events.
  Works with Infura free plan.
 
-## Running the application
+## Install with Homebrew
+`brew install OpenFuturePlatform/tap/token-snapshot`
+
+Test running `token-snapshot -h` command
+
+## Clone and run
 Run from the command line `token-snapshot` script.
 
 Input arguments:
